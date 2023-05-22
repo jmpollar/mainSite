@@ -5,6 +5,10 @@
   max-width: 500px;
 }
 
-#title {
-  text-align: center;
+/* the hashtag in a CSS selector selects an element by id, e.g., id="content" */
+#content {
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px #888;
+  background-color: #84B59F;
 }
