@@ -1,6 +1,11 @@
 /* Homepage specific CSS */
 
 /*Instructions and start block*/
+body {
+  background-image: url('../img/home.JPG'); 
+  background-size: cover;
+}
+
 #content {
   margin: 10px;
   padding: 30px;
