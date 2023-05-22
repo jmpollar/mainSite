@@ -28,7 +28,7 @@ h1 {
 }
 
 /* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
-.minor-section {
+.nav-bar {
   padding: 10px;
   margin-bottom: 10px;
   border: solid 1px #888;
