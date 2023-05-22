@@ -1,20 +1,11 @@
-/* we can use a single css file to style all the files in our wwebsite */
+/* stuff on every page */
 
-/* you can pick your own background colors, text colors, and fonts */
+/* the title and nav bar */
 
-/* we can select an html element tag, in this case "body" will apply to the whole document */
 body {
-  background-image: url("cute-grey-kitten.jpg");
   background-color: #e2ebed;
-  
 }
 
-/* we can have rules apply to multiple elements at the same time with commas */
-h1,h2,h3 {
-  font-family: sans-serif;
-}
-
-/* and we can have rules that overlap other rules, both take effect */
 h1 {
   letter-spacing: 3px;
   word-spacing: 5px;
@@ -22,7 +13,10 @@ h1 {
   text-align: center;
 }
 
-/* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
+h1,h2,h3 {
+  font-family: sans-serif;
+}
+
 .nav-bar {
   padding: 10px;
   margin-bottom: 10px;

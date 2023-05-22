@@ -1,14 +1,25 @@
-/* this css file will only style the homepage of our site */
+/* Homepage specific CSS */
 
-.cat-photo {
-  margin: 10px;
-  max-width: 500px;
-}
-
-/* the hashtag in a CSS selector selects an element by id, e.g., id="content" */
+/*Instructions and start block*/
 #content {
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
   border: solid 1px #888;
   background-color: #84B59F;
+  opacity: 0.75;
+  text-align: center;
+}
+
+#start {
+  background-color: #ebe047; /* Green */
+  border: 2px;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+}
+
+#instructions {
+  padding: 30px
 }
