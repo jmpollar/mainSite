@@ -14,6 +14,10 @@ function myFunction(param1, param2) {
 
 function main() {
   console.log("Main function started.");
+  //begin game
+  $("#start").click(function() {
+    
+  });
   // the code that makes everything happen
 }
 
