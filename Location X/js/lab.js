@@ -21,6 +21,7 @@ function myFunction(param1, param2) {
 }
 
 function main() {
+  
   var xOffset = 210;
   var yOffset = 40;
   const area1 = new Area(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
@@ -30,7 +31,7 @@ function main() {
   const area5 = new Area(1125 + pageXOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
   function drawBoxes() {
     //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#img-canvas").drawRect({
+    $("#box-canvas").drawRect({
       name: "box1",
       layer: true,
       strokeStyle: 'red',
@@ -41,7 +42,7 @@ function main() {
       fromCenter: false
     });
     //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#img-canvas").drawRect({
+    $("#box-canvas").drawRect({
       name: "box2",
       layer: true,
       strokeStyle: 'red',
@@ -52,7 +53,7 @@ function main() {
       fromCenter: false,
     });
     //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#img-canvas").drawRect({
+    $("#box-canvas").drawRect({
       name: "box3",
       layer: true,
       strokeStyle: 'red',
@@ -63,7 +64,7 @@ function main() {
       fromCenter: false
     });
     //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#img-canvas").drawRect({
+    $("#box-canvas").drawRect({
       name: "box4",
       layer: true,
       strokeStyle: 'red',
@@ -74,7 +75,7 @@ function main() {
       fromCenter: false
     });
     //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#img-canvas").drawRect({
+    $("#box-canvas").drawRect({
       name: "box5",
       layer: true,
       strokeStyle: 'red',
@@ -87,6 +88,7 @@ function main() {
   }
   //draw the image on the canvas using jCanvas at center of page 
   $("#img-canvas").drawImage({
+    name: "img1",
     source: 'img/photo1.png',
     x: 210,
     y: 40,
@@ -94,6 +96,9 @@ function main() {
     fromCenter: false,
     load: drawBoxes
   });
+
+  //append these to the canvas
+  $("#img-body").append($("#img1", "#box1", "#box2", "#box3", "#box4", "#box5"));
 
 }
 
