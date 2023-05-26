@@ -21,6 +21,8 @@ function myFunction(param1, param2) {
 }
 
 function main() {
+  var gameOver = false;
+  var timeElapsed = 0.0;
   var slugWidth = 1170 / 2;
   var slugHeight = 1097 / 2;
   var numberOfAreas = 5;
@@ -160,6 +162,36 @@ function main() {
 
   //call drawSluggy now for testing but this will be called with an html listener of sorts later
   drawSluggy();
+
+  //function to increment time elapsed
+  var startTime = Date.now();
+  console.log(startTime);
+
+  function getTimeElapsed() {
+    return (Date.now()-startTime);
+  }
+  
+  //assign the return value of getTimeElapsed to timeElapsed on canvas.onHover
+  $("#slug-canvas").hover(function() {
+    timeElapsed = Number(getTimeElapsed());
+    console.log(timeElapsed);
+    //change the time paragraph's innerHTML to timeElapsed
+    $("#time-p").html("TIME ELAPSED: " + (timeElapsed/1000) + " SECONDS");
+  });
+  $("#box-canvas").hover(function() {
+    timeElapsed = Number(getTimeElapsed());
+    console.log(timeElapsed);
+    //change the time paragraph's innerHTML to timeElapsed
+    $("#time-p").html("TIME ELAPSED: " + (timeElapsed/1000) + " SECONDS");
+  });
+  $("#img-canvas").hover(function() {
+    timeElapsed = Number(getTimeElapsed());
+    console.log(timeElapsed);
+    //change the time paragraph's innerHTML to timeElapsed
+    $("#time-p").html("TIME ELAPSED: " + (timeElapsed/1000) + " SECONDS");
+  });
+
+  
 
 }
 

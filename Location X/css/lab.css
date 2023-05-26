@@ -19,3 +19,8 @@
     width: 100% !important;
   }
   
+  #time-p{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
