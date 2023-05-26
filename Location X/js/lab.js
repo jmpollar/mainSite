@@ -21,6 +21,10 @@ function myFunction(param1, param2) {
 }
 
 function main() {
+  var coords;
+  var currentQuadrant;
+  var photo1Width = 1500;
+  var photo1Height = 1000;
   var gameOver = false;
   var timeElapsed = 0.0;
   var slugWidth = 1170 / 2;
@@ -34,6 +38,11 @@ function main() {
   const area4 = new Area(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
   const area5 = new Area(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
 
+  //declare quadrants
+  const quad1 = new Area(xOffset, yOffset, xOffset + (photo1Width / 2), yOffset + (photo1Height / 2));
+  const quad2 = new Area(xOffset + (photo1Width / 2), yOffset, xOffset + (photo1Width), yOffset + (photo1Height / 2));
+  const quad3 = new Area(xOffset, yOffset + (photo1Height / 2), xOffset + (photo1Width / 2), yOffset + (photo1Height));
+  const quad4 = new Area(xOffset + (photo1Width / 2), yOffset + (photo1Height / 2), xOffset + (photo1Width), yOffset + (photo1Height));
   function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -76,7 +85,7 @@ function main() {
 
   function drawSluggy() {
     //get random coordinates from the function
-    var coords = chooseCoordinates();
+    coords = chooseCoordinates();
     console.log(coords); //functional
     console.log(coords[2] + coords[3]);
 
@@ -147,6 +156,61 @@ function main() {
       height: (area5.maxY - area5.minY),
       fromCenter: false
     });
+
+  }
+
+  function drawQuadrant(quad) {
+    //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
+    switch (quad) {
+      case 0:
+        $("#box-canvas").drawRect({
+          name: "box6",
+          layer: true,
+          strokeStyle: 'red',
+          strokeWidth: 4,
+          x: quad1.minX, y: quad1.minY,
+          width: (quad1.maxX - quad1.minX),
+          height: (quad1.maxY - quad1.minY),
+          fromCenter: false
+        });
+        break;
+      case 1:
+        $("#box-canvas").drawRect({
+          name: "box7",
+          layer: true,
+          strokeStyle: 'red',
+          strokeWidth: 4,
+          x: quad2.minX, y: quad2.minY,
+          width: (quad2.maxX - quad2.minX),
+          height: (quad2.maxY - quad2.minY),
+          fromCenter: false
+        });
+        break;
+      case 2:
+        $("#box-canvas").drawRect({
+          name: "box8",
+          layer: true,
+          strokeStyle: 'red',
+          strokeWidth: 4,
+          x: quad3.minX, y: quad3.minY,
+          width: (quad3.maxX - quad3.minX),
+          height: (quad3.maxY - quad3.minY),
+          fromCenter: false
+        });
+        break;
+      case 3:
+        $("#box-canvas").drawRect({
+          name: "box9",
+          layer: true,
+          strokeStyle: 'red',
+          strokeWidth: 4,
+          x: quad4.minX, y: quad4.minY,
+          width: (quad4.maxX - quad4.minX),
+          height: (quad4.maxY - quad4.minY),
+          fromCenter: false
+        });
+        break;
+    }
   }
 
   //draw the image on the canvas using jCanvas at center of page 
@@ -163,35 +227,56 @@ function main() {
   //call drawSluggy now for testing but this will be called with an html listener of sorts later
   drawSluggy();
 
+  //find out what quadrant the slug is in
+  if (coords[2] >= xOffset && coords[3] >= yOffset && coords[2] <= xOffset + (photo1Width / 2) && coords[3] <= yOffset + (photo1Height / 2)) {
+    currentQuadrant = 0;
+  }
+  else if (coords[2] >= xOffset + (photo1Width / 2) && coords[3] >= yOffset && coords[2] <= xOffset + (photo1Width) && coords[3] >= yOffset + (photo1Height / 2)) {
+    currentQuadrant = 1;
+  }
+  else if (coords[2] >= xOffset && coords[3] >= yOffset + (photo1Height / 2) && coords[2] <= xOffset + (photo1Width / 2) && coords[3] <= yOffset + (photo1Height)) {
+    currentQuadrant = 2;
+  }
+  else if (coords[2] >= xOffset + (photo1Width / 2) && coords[3] >= yOffset + (photo1Height / 2) && coords[2] <= xOffset + (photo1Width) && coords[3] <= yOffset + (photo1Height)) {
+    currentQuadrant = 3;
+  }
+  else {
+    console.log("You screwed up your quads!");
+  }
+
   //function to increment time elapsed
   var startTime = Date.now();
-  console.log(startTime);
+
+  //after 30 seconds, highlight the quadrant the slug is in
+  const showQuadTimeout = setTimeout(drawQuadrant, 30000, currentQuadrant);
+  
 
   function getTimeElapsed() {
-    return (Date.now()-startTime);
+    return (Date.now() - startTime);
   }
-  
+
   //assign the return value of getTimeElapsed to timeElapsed on canvas.onHover
-  $("#slug-canvas").hover(function() {
+  $("#slug-canvas").hover(function () {
     timeElapsed = Number(getTimeElapsed());
     console.log(timeElapsed);
     //change the time paragraph's innerHTML to timeElapsed
-    $("#time-p").html("TIME ELAPSED: " + (timeElapsed/1000) + " SECONDS");
+    $("#time-p").html("TIME ELAPSED: " + (timeElapsed / 1000) + " SECONDS");
   });
-  $("#box-canvas").hover(function() {
+  $("#box-canvas").hover(function () {
     timeElapsed = Number(getTimeElapsed());
     console.log(timeElapsed);
     //change the time paragraph's innerHTML to timeElapsed
-    $("#time-p").html("TIME ELAPSED: " + (timeElapsed/1000) + " SECONDS");
+    $("#time-p").html("TIME ELAPSED: " + (timeElapsed / 1000) + " SECONDS");
   });
-  $("#img-canvas").hover(function() {
+  $("#img-canvas").hover(function () {
     timeElapsed = Number(getTimeElapsed());
     console.log(timeElapsed);
     //change the time paragraph's innerHTML to timeElapsed
-    $("#time-p").html("TIME ELAPSED: " + (timeElapsed/1000) + " SECONDS");
+    $("#time-p").html("TIME ELAPSED: " + (timeElapsed / 1000) + " SECONDS");
   });
 
-  
+
+
 
 }
 
