@@ -1,0 +1,119 @@
+/* CSS */
+
+body {
+  background-image: url('../img/home.JPG'); 
+  background-size: cover;
+}
+
+h1 {
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  font-size: 300%;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2,h3 {
+  font-family: sans-serif;
+}
+
+#content {
+  margin: 10px;
+  padding: 20px;
+  border: solid 1px #888;
+  background-color: #f0f0b6;
+  opacity: 0.90;
+  text-align: center;
+}
+
+/* nav bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #888;
+  background-color: #f0f0b6;
+}
+
+/*Instructions and start block*/
+#start {
+  background-color: #ebe047; /* Green */
+  border: 2px;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 30px;
+}
+
+#instructions {
+  padding: 30px;
+  text-align: center;
+  list-style-position: inside;
+}
+
+#home {
+  background-color: #f0f0b6;
+  opacity: 0.90;
+  text-align: center;
+}
+
+/*About*/
+#about {
+  background-color: #f0f0b6;
+  opacity: 0.90;
+  text-align: center;
+}
+
+/*Location 1*/
+#location1 {
+  background-color: #f0f0b6;
+  text-align: center;
+}
+
+/* tabs */
+.hidden {
+  display: none;
+}
+
+.tabbed-section {
+  max-width: 1500px;
+  max-height: 1000px;
+  margin: 0 auto;
+}
+
+.tab-bar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #ccc;
+}
+
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.tab-pane {
+  display: none;
+  min-height: 100px;
+}
+
+.tab-pane.active {
+  display: block;
+}

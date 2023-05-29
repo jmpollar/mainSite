@@ -4,22 +4,27 @@
 
 // Constants
 
-// Functions
+/*his stuff*/
+$("#hideSimpleBtn").click(function() {
+  $("#simpleDiv").hide();
+});
 
-// this is an example function and this comment tells what it doees and what parameters are passed to it.
-function myFunction(param1, param2) {
-  // some code here
-  // return results;
-}
+$("#showSimpleBtn").click(function() {
+  $("#simpleDiv").show();
+});
 
-function main() {
-  console.log("Main function started.");
-  //begin game
-  $("#start").click(function() {
-    
-  });
-  // the code that makes everything happen
-}
-
-// let's get this party started
-main();
+// When a tab is clicked
+$('.tab').click(function() {
+  // Get the value of the data-tab attribute of the clicked tab
+  var tabId = $(this).data('tab');
+  
+  // Remove the 'active' class from all tabs
+  $('.tab').removeClass('active');
+  // Add the 'active' class to the clicked tab
+  $(this).addClass('active');
+  
+  // Hide all tab panes
+  $('.tab-pane').removeClass('active');
+  // Show the tab pane corresponding to the clicked tab
+  $('[data-tab-content="' + tabId + '"]').addClass('active');
+});

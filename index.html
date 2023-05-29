@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Find The Slug</title>
 
@@ -9,38 +10,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<!-- bootstrap-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-	<!-- Include a sitewide CSS file for consistent styling across the site -->
-	<link rel="stylesheet" type="text/css" href="css/site.css">
-	<!-- Lab-specifc CSS file for any special styling of this particular page -->
-	<link rel="stylesheet" type="text/css" href="css/homepage.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+	<!-- CSS file for any special styling of this particular page -->
+	<link rel="stylesheet" type="text/css" href="css/page.css">
+	<script
+        src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+        crossorigin="anonymous"></script>
 	<!-- Link to javascript file - DEFER waits until all elements are rendered -->
-
-	<!-- <script type="text/javascript" src="./js/lab.js" DEFER></script> -->
+	<script type="text/javascript" src="./js/site.js" DEFER></script>
 </head>
+
 <body>
 	<div class="nav-bar">
 		<h1>Find the Slug</h1>
-		<!-- all the links to about us home and timer display-->
-		<ul>
-			<li><a href="About/index.html"> About Us</a></li>
-			<li><a href="../index.html"> Home</a></li>
-			<li>Timer</li>
-		  </ul>
-		<!-- <nav id="links">
-			<a href="About/index.html"> About Us</a>
-			<a href="../index.html"> Home</a>
-			timer
-		</nav> -->
+		<ul class="tab-bar">
+			<li class="tab active" data-tab="tab1">Home</li>
+			<li class="tab" data-tab="tab2">About Us</li>
+		</ul>
+		<!-- timer ???? -->
 	</div>
 	<main id="content">
-		<!-- start button-->
-		<button id="start">START</button>
-		<div id="instructions">
-			<h2>Instructions</h2>
-			<p>list of steps</p>
-		</div>
+		<section class="tabbed-section">
+			<div class="tab-content">
+			  <div class="tab-pane active" data-tab-content="tab1" id="home">
+				<div id="instructions">
+					<h3>Instructions</h3>
+					<ol>
+						<li>jkfv</li>
+						<li>jkfv</li>
+					</ol>
+				</div>
+				<button class="tab" data-tab="tab3" id="start">START</button>
+			  </div>
+			  <div class="tab-pane" data-tab-content="tab2" id="about">
+				<h3>About Us</h3>
+				<p>XXXXXXX</p>
+			  </div>
+			  <div class="tab-pane" data-tab-content="tab3" id="location1">
+				<h3>Location 1</h3>
+				<!-- Somehow put the location html in here-->
+			  </div>
+			</div>
+		</section>
 	</main>
 </body>
+
 </html>
