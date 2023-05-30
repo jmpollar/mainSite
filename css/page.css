@@ -21,12 +21,15 @@ h2,h3 {
   margin: 10px;
   padding: 20px;
   border: solid 1px #888;
-  background-color: #f0f0b6;
-  opacity: 0.90;
+  background-color: #f0f0b6ec;
   text-align: center;
 }
 
 /* nav bar */
+#site-title {
+  margin-top: 30px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -34,17 +37,17 @@ ul {
 }
 
 .nav-bar {
+  background-color: #f0f0b6ec;
   padding: 10px;
   margin-bottom: 10px;
   border: solid 1px #888;
-  background-color: #f0f0b6;
 }
 
 /*Instructions and start block*/
 #start {
-  background-color: #ebe047; /* Green */
+  background-color: #386a94; /* Highlight */
   border: 2px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   padding: 15px 32px;
   text-align: center;
   display: inline-block;
@@ -58,21 +61,16 @@ ul {
 }
 
 #home {
-  background-color: #f0f0b6;
-  opacity: 0.90;
   text-align: center;
 }
 
 /*About*/
 #about {
-  background-color: #f0f0b6;
-  opacity: 0.90;
   text-align: center;
 }
 
 /*Location 1*/
 #location1 {
-  background-color: #f0f0b6;
   text-align: center;
 }
 
@@ -94,17 +92,19 @@ ul {
 }
 
 .tab {
+  background-color: #ffffff;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #f0f0f0;
   cursor: pointer;
 }
 
 .tab.active {
-  background-color: #ccc;
+  background-color: #386a94;
+  color: rgb(255, 255, 255);
 }
 
 .tab-content {
+  background-color: #f0f0b6;
   border: 1px solid #ccc;
   padding: 20px;
 }
