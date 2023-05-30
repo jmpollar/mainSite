@@ -3,6 +3,7 @@
 body {
   background-image: url('../img/home.JPG'); 
   background-size: cover;
+
 }
 
 h1 {
@@ -117,3 +118,4 @@ ul {
 .tab-pane.active {
   display: block;
 }
+

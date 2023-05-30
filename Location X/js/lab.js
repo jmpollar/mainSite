@@ -21,14 +21,18 @@ function myFunction(param1, param2) {
 }
 
 function main() {
+  var rect1, rect2, rect3, rect4, rect5;
+  var quaddie1, quaddie2, quaddie3, quaddie4;
+  var slug1Img = document.getElementById("slug1-id");
+  var imgCanvas = document.getElementById("img-canvas");
   var coords;
   var currentQuadrant;
   var photo1Width = 1500;
   var photo1Height = 1000;
   var gameOver = false;
   var timeElapsed = 0.0;
-  var slugWidth = 1170 / 2;
-  var slugHeight = 1097 / 2;
+  var slugWidth = 1170.0;
+  var slugHeight = 1097.0;
   var numberOfAreas = 5;
   var xOffset = 210;
   var yOffset = 40;
@@ -88,127 +92,71 @@ function main() {
     coords = chooseCoordinates();
     console.log(coords); //functional
     console.log(coords[2] + coords[3]);
-
+    var ctx = imgCanvas.getContext("2d");
     //draw the slug on the slug canvas layer at this coordinate location
-    $("#slug-canvas").drawImage({
+    ctx.drawImage(slug1Img, coords[3] - (slugHeight/2),coords[2] - (slugWidth/2), slug1Img.naturalWidth/10, slug1Img.naturalHeight/10);
+    
+    /*$("#slug-canvas").drawImage({
       name: "slugImg",
       source: 'img/slug1.jpg',
-      x: coords[2] - (slugWidth),
-      y: coords[3] - (slugHeight),
+      x: coords[2] - (slugWidth/2),
+      y: coords[3] - (slugHeight/2),
       scale: .1,
       fromCenter: false
-    });
+    });*/
+
   }
 
   function drawBoxes() {
     //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#box-canvas").drawRect({
-      name: "box1",
-      layer: true,
-      strokeStyle: 'red',
-      strokeWidth: 4,
-      x: area1.minX, y: area1.minY,
-      width: (area1.maxX - area1.minX),
-      height: (area1.maxY - area1.minY),
-      fromCenter: false
-    });
-    //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#box-canvas").drawRect({
-      name: "box2",
-      layer: true,
-      strokeStyle: 'red',
-      strokeWidth: 4,
-      x: area2.minX, y: area2.minY,
-      width: (area2.maxX - area2.minX),
-      height: (area2.maxY - area2.minY),
-      fromCenter: false,
-    });
-    //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#box-canvas").drawRect({
-      name: "box3",
-      layer: true,
-      strokeStyle: 'red',
-      strokeWidth: 4,
-      x: area3.minX, y: area3.minY,
-      width: (area3.maxX - area3.minX),
-      height: (area3.maxY - area3.minY),
-      fromCenter: false
-    });
-    //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#box-canvas").drawRect({
-      name: "box4",
-      layer: true,
-      strokeStyle: 'red',
-      strokeWidth: 4,
-      x: area4.minX, y: area4.minY,
-      width: (area4.maxX - area4.minX),
-      height: (area4.maxY - area4.minY),
-      fromCenter: false
-    });
-    //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-    $("#box-canvas").drawRect({
-      name: "box5",
-      layer: true,
-      strokeStyle: 'red',
-      strokeWidth: 4,
-      x: area5.minX, y: area5.minY,
-      width: (area5.maxX - area5.minX),
-      height: (area5.maxY - area5.minY),
-      fromCenter: false
-    });
+    var ctx = imgCanvas.getContext("2d");
+    ctx.beginPath();
+    ctx.strokeStyle = "#FF0000";
+    ctx.lineWidth = "4";
+    rect1 = ctx.rect(area1.minX, area1.minY, (area1.maxX - area1.minX), (area1.maxY - area1.minY));
+    ctx.stroke();
 
+    rect2 = ctx.rect(area2.minX, area2.minY, (area2.maxX - area2.minX), (area2.maxY - area2.minY));
+    ctx.stroke();
+
+    rect3 = ctx.rect(area3.minX, area3.minY, (area3.maxX - area3.minX), (area3.maxY - area3.minY));
+    ctx.stroke();
+
+
+    rect4 = ctx.rect(area4.minX, area4.minY, (area4.maxX - area4.minX), (area4.maxY - area4.minY));
+    ctx.stroke();
+
+
+    rect5 = ctx.rect(area5.minX, area5.minY, (area5.maxX - area5.minX), (area5.maxY - area5.minY));
+    ctx.stroke();
   }
 
   function drawQuadrant(quad) {
     //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
     switch (quad) {
       case 0:
-        $("#box-canvas").drawRect({
-          name: "box6",
-          layer: true,
-          strokeStyle: 'red',
-          strokeWidth: 4,
-          x: quad1.minX, y: quad1.minY,
-          width: (quad1.maxX - quad1.minX),
-          height: (quad1.maxY - quad1.minY),
-          fromCenter: false
-        });
+        var ctx = imgCanvas.getContext("2d");
+        ctx.beginPath();
+        quaddie1 = ctx.rect(quad1.minX, quad1.minY, (quad1.maxX - quad1.minX), (quad1.maxY - quad1.minY));
+        ctx.stroke();
         break;
       case 1:
-        $("#box-canvas").drawRect({
-          name: "box7",
-          layer: true,
-          strokeStyle: 'red',
-          strokeWidth: 4,
-          x: quad2.minX, y: quad2.minY,
-          width: (quad2.maxX - quad2.minX),
-          height: (quad2.maxY - quad2.minY),
-          fromCenter: false
-        });
+        var ctx = imgCanvas.getContext("2d");
+        ctx.beginPath();
+        quaddie2 = ctx.rect(quad2.minX, quad2.minY, (quad2.maxX - quad2.minX), (quad2.maxY - quad2.minY));
+        ctx.stroke();
         break;
       case 2:
-        $("#box-canvas").drawRect({
-          name: "box8",
-          layer: true,
-          strokeStyle: 'red',
-          strokeWidth: 4,
-          x: quad3.minX, y: quad3.minY,
-          width: (quad3.maxX - quad3.minX),
-          height: (quad3.maxY - quad3.minY),
-          fromCenter: false
-        });
+        var ctx = imgCanvas.getContext("2d");
+        ctx.beginPath();
+        quaddie3 = ctx.rect(quad3.minX, quad3.minY, (quad3.maxX - quad3.minX), (quad3.maxY - quad3.minY));
+        ctx.stroke();
         break;
       case 3:
-        $("#box-canvas").drawRect({
-          name: "box9",
-          layer: true,
-          strokeStyle: 'red',
-          strokeWidth: 4,
-          x: quad4.minX, y: quad4.minY,
-          width: (quad4.maxX - quad4.minX),
-          height: (quad4.maxY - quad4.minY),
-          fromCenter: false
-        });
+        var ctx = imgCanvas.getContext("2d");
+        ctx.beginPath();
+        quaddie4 = ctx.rect(quad4.minX, quad4.minY, (quad4.maxX - quad4.minX), (quad4.maxY - quad4.minY));
+        ctx.stroke();
         break;
     }
   }
@@ -249,25 +197,13 @@ function main() {
 
   //after 30 seconds, highlight the quadrant the slug is in
   const showQuadTimeout = setTimeout(drawQuadrant, 30000, currentQuadrant);
-  
+
 
   function getTimeElapsed() {
     return (Date.now() - startTime);
   }
 
   //assign the return value of getTimeElapsed to timeElapsed on canvas.onHover
-  $("#slug-canvas").hover(function () {
-    timeElapsed = Number(getTimeElapsed());
-    console.log(timeElapsed);
-    //change the time paragraph's innerHTML to timeElapsed
-    $("#time-p").html("TIME ELAPSED: " + (timeElapsed / 1000) + " SECONDS");
-  });
-  $("#box-canvas").hover(function () {
-    timeElapsed = Number(getTimeElapsed());
-    console.log(timeElapsed);
-    //change the time paragraph's innerHTML to timeElapsed
-    $("#time-p").html("TIME ELAPSED: " + (timeElapsed / 1000) + " SECONDS");
-  });
   $("#img-canvas").hover(function () {
     timeElapsed = Number(getTimeElapsed());
     console.log(timeElapsed);
