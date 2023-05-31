@@ -26,7 +26,24 @@ h2,h3 {
   text-align: center;
 }
 
+/* Button Formatting */
+
+.button {
+  margin-inline: 3  px;
+  /* Animation */
+  transition:  0.2s;
+  transition-timing-function: ease-out;
+  border-radius: 15px;
+}
+
+.button:hover {
+  background-color: #386a94;
+  color:#ffffff;
+  border-radius: 8px;
+}
+
 /* nav bar */
+
 #site-title {
   margin-top: 30px;
 }
@@ -53,6 +70,14 @@ ul {
   text-align: center;
   display: inline-block;
   font-size: 30px;
+  border-radius: 25px;
+  /* Animation */
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+#start:hover {
+  border-radius: 10px;
 }
 
 #instructions {
@@ -105,7 +130,7 @@ ul {
 }
 
 .tab-content {
-  background-color: #f0f0b6;
+  background-color: #f1f1dc;
   border: 1px solid #ccc;
   padding: 20px;
 }
