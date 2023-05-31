@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="preload" as="image" href="./img/photo1.png">
 	<!-- Include a sitewide CSS file for consistent styling across the site -->
-	<!--<link rel="stylesheet" type="text/css" href="../css/page.css"> -->
+	<link rel="stylesheet" type="text/css" href="../css/page.css">
 	<!-- Lab-specifc CSS file for any special styling of this particular page -->
 	<link rel="stylesheet" type="text/css" href="css/lab.css">
 	<!-- bootstrap-->
@@ -28,15 +28,19 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"
 		integrity="sha512-pu2L+33GBCuTrTU3mNJphG2Hm2JKlLA01280LIiz29D40f/UFOU5dEVxVuW46p+HZeZhXvQsUxtVFxPabX9S9g=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 	<!-- Link to javascript file - DEFER waits until all elements are rendered -->
 	<script type="text/javascript" src="./js/lab.js" DEFER></script>
 </head>
 
-<body id="img-body" width="1920px" height="1080px" style="position: absolute; left: 0; top: 0;">
+<body id="img-body">
 	<div id="canvas-div">
-		<canvas id="img-canvas" width="1920px" height="1080px" style=" left: 0; top: 0;">
+		<canvas id="img-canvas" width="1920px" height="1080px" style="position: absolute; left: 0; top: 0;">
 		</canvas>
-		<img src="./img/slug1.jpg" id = "slug1-id">
+		<canvas id="box-canvas" width="1920px" height="1080px" style="position: absolute; left: 0; top: 0;">
+		</canvas>
+		<canvas id="slug-canvas" width="1920px" height="1080px" style="position: absolute; left: 0; top: 0;">
+		</canvas>
 	</div>
 	<div id="time-div">
 		<p id="time-p"></p>

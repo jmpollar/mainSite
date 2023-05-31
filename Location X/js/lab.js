@@ -94,16 +94,16 @@ function main() {
     console.log(coords[2] + coords[3]);
     var ctx = imgCanvas.getContext("2d");
     //draw the slug on the slug canvas layer at this coordinate location
-    ctx.drawImage(slug1Img, coords[3] - (slugHeight/2),coords[2] - (slugWidth/2), slug1Img.naturalWidth/10, slug1Img.naturalHeight/10);
+    //ctx.drawImage(slug1Img, coords[3] - (slugHeight/2),coords[2] - (slugWidth/2), slug1Img.naturalWidth/10, slug1Img.naturalHeight/10);
     
-    /*$("#slug-canvas").drawImage({
+    $("#slug-canvas").drawImage({
       name: "slugImg",
       source: 'img/slug1.jpg',
       x: coords[2] - (slugWidth/2),
       y: coords[3] - (slugHeight/2),
       scale: .1,
       fromCenter: false
-    });*/
+    });
 
   }
 
