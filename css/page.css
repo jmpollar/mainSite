@@ -26,11 +26,17 @@ h2,h3 {
   text-align: center;
 }
 
+#text {
+  width: 100px;
+  float: right;
+  margin-top: -50px;
+}
+
 #homeSlug {
   width: 225px;
   float: right;
-  padding-right: 20px;
-  margin-top: -27px;
+  margin-right: -100px;
+  margin-top: -35px;
 }
 
 /* Button Formatting */
