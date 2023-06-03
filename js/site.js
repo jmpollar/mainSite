@@ -12,6 +12,8 @@ $("#hideSimpleBtn").click(function() {
 $("#showSimpleBtn").click(function() {
   $("#simpleDiv").show();
 });
+var gameStarted = false;
+var startTime;
 
 // When a tab is clicked
 $('.tab').click(function() {
@@ -27,6 +29,11 @@ $('.tab').click(function() {
   $('.tab-pane').removeClass('active');
   // Show the tab pane corresponding to the clicked tab
   $('[data-tab-content="' + tabId + '"]').toggleClass('active');
+  //set gameStarted to true
+  gameStarted = true;
+  //function to increment time elapsed
+  startTime = Date.now();
+  console.log("GAME STARTED: " + gameStarted);
 });
 
 /* Imported from Location X JS */
@@ -220,8 +227,7 @@ function main() {
     console.log("You screwed up your quads!");
   }
 
-  //function to increment time elapsed
-  var startTime = Date.now();
+  
 
   //after 30 seconds, highlight the quadrant the slug is in
   const showQuadTimeout = setTimeout(drawQuadrant, 30000, currentQuadrant);
