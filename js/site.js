@@ -21,10 +21,9 @@ $('.tab').click(function() {
   var tabId = $(this).data('tab');
   
   // Remove the 'active' class from all tabs
-  $('#start').removeClass('active');
+  $('.tab').removeClass('active');
   // Add the 'active' class to the clicked tab
   $(this).toggleClass('active');
-  
   // Hide all tab panes
   $('.tab-pane').removeClass('active');
   // Show the tab pane corresponding to the clicked tab
@@ -36,6 +35,12 @@ $('.tab').click(function() {
   console.log("GAME STARTED: " + gameStarted);
 });
 
+$("#start").click(function() {
+   //disable nav bar and slug imgs
+   $(".tab-bar").hide();
+   $("#text").hide();
+   $("#homeSlug").hide();
+});
 /* Imported from Location X JS */
 
 class Area {
