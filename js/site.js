@@ -5,21 +5,21 @@
 // Constants
 
 /*his stuff*/
-$("#hideSimpleBtn").click(function() {
+$("#hideSimpleBtn").click(function () {
   $("#simpleDiv").hide();
 });
 
-$("#showSimpleBtn").click(function() {
+$("#showSimpleBtn").click(function () {
   $("#simpleDiv").show();
 });
 var gameStarted = false;
 var startTime;
 
 // When a tab is clicked
-$('.tab').click(function() {
+$('.tab').click(function () {
   // Get the value of the data-tab attribute of the clicked tab
   var tabId = $(this).data('tab');
-  
+
   // Remove the 'active' class from all tabs
   $('.tab').removeClass('active');
   // Add the 'active' class to the clicked tab
@@ -35,12 +35,14 @@ $('.tab').click(function() {
   console.log("GAME STARTED: " + gameStarted);
 });
 
-$("#start").click(function() {
-   //disable nav bar and slug imgs
-   $(".tab-bar").hide();
-   $("#text").hide();
-   $("#homeSlug").hide();
+//when start button clicked
+$("#start").click(function () {
+  //disable nav bar and slug imgs
+  $(".tab-bar").hide();
+  $("#text").hide();
+  $("#homeSlug").hide();
 });
+
 /* Imported from Location X JS */
 
 class Area {
@@ -134,16 +136,32 @@ function main() {
     console.log(coords[2] + coords[3]);
     var ctx = imgCanvas.getContext("2d");
     //draw the slug on the slug canvas layer at this coordinate location
-    //ctx.drawImage(slug1Img, coords[3] - (slugHeight/2),coords[2] - (slugWidth/2), slug1Img.naturalWidth/10, slug1Img.naturalHeight/10);
-    
+    var slug1 = $("#img-canvas").append("<img src=img/slug1.jpg id=slug1id>");
+
+    $("#img-canvas").drawImage(slug1, coords[2] - (slugWidth / 2), coords[3] - (slugHeight / 2), slugWidth/10, slugHeight/10);
+
     $("#img-canvas").drawImage({
       name: "slugImg",
+      id: "slug1id",
       source: 'img/slug1.jpg',
-      x: coords[2] - (slugWidth/2),
-      y: coords[3] - (slugHeight/2),
+      x: coords[2] - (slugWidth / 2),
+      y: coords[3] - (slugHeight / 2),
       scale: .1,
-      fromCenter: false
+      fromCenter: false,
+      //when the slug is clicked, event listener
+      click: function (layer) {
+        //hide the slug
+        ("#img-canvas").remove();
+      }
     });
+
+    /* var ctx = imgCanvas.getContext("2d");
+    //draw the slug on the slug canvas layer at this coordinate location
+    var slug1 = $("#img-canvas").append("<img src=img/slug1.jpg id=slug1id>");
+
+    $("#img-canvas").drawImage(slug1, coords[2] - (slugWidth / 2), coords[3] - (slugHeight / 2), slugWidth/10, slugHeight/10);
+
+ */
 
   }
 
@@ -232,7 +250,7 @@ function main() {
     console.log("You screwed up your quads!");
   }
 
-  
+
 
   //after 30 seconds, highlight the quadrant the slug is in
   const showQuadTimeout = setTimeout(drawQuadrant, 30000, currentQuadrant);
