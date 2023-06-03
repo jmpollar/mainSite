@@ -21,7 +21,7 @@ $('.tab').click(function() {
   var tabId = $(this).data('tab');
   
   // Remove the 'active' class from all tabs
-  $('.tab').removeClass('active');
+  $('#start').removeClass('active');
   // Add the 'active' class to the clicked tab
   $(this).toggleClass('active');
   
