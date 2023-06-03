@@ -35,13 +35,7 @@ $('.tab').click(function () {
   console.log("GAME STARTED: " + gameStarted);
 });
 
-//when start button clicked
-$("#start").click(function () {
-  //disable nav bar and slug imgs
-  $(".tab-bar").hide();
-  $("#text").hide();
-  $("#homeSlug").hide();
-});
+
 
 /* Imported from Location X JS */
 
@@ -63,6 +57,16 @@ function myFunction(param1, param2) {
 }
 
 function main() {
+  //when start button clicked
+$("#start").click(function () {
+  //disable nav bar and slug imgs
+  $(".tab-bar").hide();
+  $("#text").hide();
+  $("#homeSlug").hide();
+  //after 30 seconds, highlight the quadrant the slug is in
+  const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
+
+});
   var rect1, rect2, rect3, rect4, rect5;
   var quaddie1, quaddie2, quaddie3, quaddie4;
   var slug1Img = document.getElementById("slug1-id");
@@ -151,7 +155,7 @@ function main() {
       //when the slug is clicked, event listener
       click: function (layer) {
         //hide the slug
-        ("#img-canvas").remove();
+        ctx.clearRect(0,0,$("#img-canvas").width, $("#img-canvas").height);
       }
     });
 
@@ -250,10 +254,6 @@ function main() {
     console.log("You screwed up your quads!");
   }
 
-
-
-  //after 30 seconds, highlight the quadrant the slug is in
-  const showQuadTimeout = setTimeout(drawQuadrant, 30000, currentQuadrant);
 
 
   function getTimeElapsed() {
