@@ -58,15 +58,15 @@ function myFunction(param1, param2) {
 
 function main() {
   //when start button clicked
-$("#start").click(function () {
-  //disable nav bar and slug imgs
-  $(".tab-bar").hide();
-  $("#text").hide();
-  $("#homeSlug").hide();
-  //after 30 seconds, highlight the quadrant the slug is in
-  const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
+  $("#start").click(function () {
+    //disable nav bar and slug imgs
+    $(".tab-bar").hide();
+    $("#text").hide();
+    $("#homeSlug").hide();
+    //after 30 seconds, highlight the quadrant the slug is in
+    const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
 
-});
+  });
   var rect1, rect2, rect3, rect4, rect5;
   var quaddie1, quaddie2, quaddie3, quaddie4;
   var slug1Img = document.getElementById("slug1-id");
@@ -142,7 +142,7 @@ $("#start").click(function () {
     //draw the slug on the slug canvas layer at this coordinate location
     var slug1 = $("#img-canvas").append("<img src=img/slug1.jpg id=slug1id>");
 
-    $("#img-canvas").drawImage(slug1, coords[2] - (slugWidth / 2), coords[3] - (slugHeight / 2), slugWidth/10, slugHeight/10);
+    $("#img-canvas").drawImage(slug1, coords[2] - (slugWidth / 2), coords[3] - (slugHeight / 2), slugWidth / 10, slugHeight / 10);
 
     $("#img-canvas").drawImage({
       name: "slugImg",
@@ -151,12 +151,7 @@ $("#start").click(function () {
       x: coords[2] - (slugWidth / 2),
       y: coords[3] - (slugHeight / 2),
       scale: .1,
-      fromCenter: false,
-      //when the slug is clicked, event listener
-      click: function (layer) {
-        //hide the slug
-        ctx.clearRect(0,0,$("#img-canvas").width, $("#img-canvas").height);
-      }
+      fromCenter: false
     });
 
     /* var ctx = imgCanvas.getContext("2d");
@@ -269,7 +264,18 @@ $("#start").click(function () {
   });
 
 
+  //KIND OF works, but changing the window size changes click position which is an issue, if only we could make the image an element at a specific spot.
+  $("#img-canvas").click(function (clickPos) {
+    console.log(clickPos.clientX + " " + clickPos.clientY);
+    //when the slug is clicked, event listener
+    if (gameStarted === true && (clickPos.clientX <= coords[2] + 100 && clickPos.clientX >= coords[2] - 100) && (clickPos.clientY <= coords[3] + 100 && clickPos.clientY >= coords[3] - 100)) {
+      console.log("HIT");
+      var ctx = imgCanvas.getContext("2d");
+      //hide the slug
+      ctx.clearRect(0, 0, $("#img-canvas").width, $("#img-canvas").height);
+    }
 
+  })
 
 }
 
@@ -278,3 +284,4 @@ $("#start").click(function () {
 
 // let's get this party started
 main();
+
