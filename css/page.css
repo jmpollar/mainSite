@@ -1,8 +1,16 @@
 /* CSS */
 
 body {
-  background-image: url('../img/trees.jpg'); 
+  background-image: url('../img/trees.jpg');
   background-size: cover;
+  width: 100%;
+  width: auto;
+  margin-left: 20px;
+  min-width: 276px;
+}
+
+p {
+  margin: 0px;
 }
 
 h1 {
@@ -13,9 +21,11 @@ h1 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-h2,h3 {
+h2,
+h3 {
   font-family: sans-serif;
   text-align: center;
+  margin: 0px;
 }
 
 #content {
@@ -24,41 +34,44 @@ h2,h3 {
   border: solid 1px #888;
   background-color: #f0f0b6cf;
   text-align: center;
+  width: 100%;
+  width: auto;
+ 
 }
 
 #text {
   width: 100px;
   float: right;
-  margin-top: -50px;
+  margin-top: -100px;
 }
 
 #homeSlug {
   width: 225px;
   float: right;
-  margin-right: -100px;
-  margin-top: -35px;
+  margin-right: -25px;
+  margin-top: -75px;
 }
 
 /* Button Formatting */
 
 .button {
-  margin-inline: 3  px;
+  margin-inline: 3 px;
   /* Animation */
-  transition:  0.2s;
+  transition: 0.2s;
   transition-timing-function: ease-out;
   border-radius: 15px;
 }
 
 .button:hover {
   background-color: #386a94;
-  color:#ffffff;
+  color: #ffffff;
   border-radius: 8px;
 }
 
 /* nav bar */
 
 #site-title {
-  margin-top: 30px;
+  margin: 0px;
 }
 
 ul {
@@ -69,14 +82,18 @@ ul {
 
 .nav-bar {
   background-color: #f0f0b6f5;
-  padding: 10px;
+  padding: 0px;
   margin-bottom: 10px;
   border: solid 1px #888;
+  height: 120px;
+  width: auto;
+  width: 100%;
 }
 
 /*Instructions and start block*/
 #start {
-  background-color: #386a94; /* Highlight */
+  background-color: #386a94;
+  /* Highlight */
   border: 2px;
   color: rgb(255, 255, 255);
   padding: 15px 32px;
@@ -102,6 +119,8 @@ ul {
 #home {
   padding: 30px;
   text-align: center;
+  min-height: 1000px;
+  height: auto;
 }
 
 /*About*/
@@ -129,7 +148,6 @@ ul {
 
 .tab-bar {
   list-style-type: none;
-  padding: 0;
   margin: 0;
 }
 
@@ -148,15 +166,34 @@ ul {
 .tab-content {
   background-color: #f1f1dc;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 0px;
 }
 
 .tab-pane {
   display: none;
-  min-height: 100px;
+  min-height: 10px;
+  height: 100px;
 }
 
 .tab-pane.active {
   display: block;
+  min-height: 10px;
 }
 
+canvas {
+  display: block;
+  top: 400;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  min-height: 1300px;
+  min-width: 1800px;
+ 
+  position: absolute;
+}
+
+html {
+  
+}

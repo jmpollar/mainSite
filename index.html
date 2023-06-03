@@ -17,15 +17,13 @@
 		crossorigin="anonymous"></script>
 	<!-- CSS file for any special styling of this particular page -->
 	<link rel="stylesheet" type="text/css" href="css/page.css">
-	<script
-        src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-        crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+		integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
 	<!--jCanvas library for drawing shapes-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"
-	integrity="sha512-pu2L+33GBCuTrTU3mNJphG2Hm2JKlLA01280LIiz29D40f/UFOU5dEVxVuW46p+HZeZhXvQsUxtVFxPabX9S9g=="
-	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		integrity="sha512-pu2L+33GBCuTrTU3mNJphG2Hm2JKlLA01280LIiz29D40f/UFOU5dEVxVuW46p+HZeZhXvQsUxtVFxPabX9S9g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 	<!-- Link to javascript file - DEFER waits until all elements are rendered -->
 	<script type="text/javascript" src="./js/site.js" DEFER></script>
@@ -35,63 +33,54 @@
 <body>
 	<div class="nav-bar">
 		<h1 id="site-title">Find the Slug</h1>
-		<img id="text" src="img/text.PNG">
-		<img id="homeSlug" src="img/slug_base.png">
 		<ul class="tab-bar">
 			<li class="tab active button" data-tab="tab1">Home</li>
 			<li class="tab button" data-tab="tab2">About Us</li>
 		</ul>
+		<img id="text" src="img/text.PNG">
+		<img id="homeSlug" src="img/slug_base.png">
+		
 		<!-- timer ???? -->
 	</div>
 	<main id="content">
 		<section class="tabbed-section">
 			<div class="tab-content">
-			  <div class="tab-pane active" data-tab-content="tab1" id="home">
-				<div id="instructions">
-					<h3>Instructions</h3>
-					<p><br>Find the slugs as fast as possible! Click start to begin the game.</p>
-					<ol>
-						<li>Once you have clicked start, a photo will appear and you have to find the 
-							slug as quickly as you can. It can be anywhere on the photo!</li>
-						<li>Once you have found the slug, click on it to continue the game and learn something new!
-							 There are 10 levels, and, remember, they get harder as you go!</li> 
-						<li>Once you are finished your time will be recorded and that will be you score. 
-							Play as many times as you want to beat your best time!</li> 
-						</li>
-					</ol>
-					<p>If you are having trouble finding the slug, remember, after two minutes we will 
-						give you a hint! This hint will highlight areas to look out for. <br>If you are still
-						 unable to find it, don't worry! You will automatically move on to the next level. <br>
-						 But be careful, because the longer it takes, the higher your time. You want to try 
-						 and get the lowest time possible! </p>
+				<div class="tab-pane active" data-tab-content="tab1" id="home">
+					<div id="instructions">
+						<h3>Instructions</h3>
+						<p><br>Find the slugs as fast as possible! Click start to begin the game.</p>
+						<ol>
+							<li>Once you have clicked start, a photo will appear and you have to find the
+								slug as quickly as you can. It can be anywhere on the photo!</li>
+							<li>Once you have found the slug, click on it to continue the game and learn something new!
+								There are 10 levels, and, remember, they get harder as you go!</li>
+							<li>Once you are finished your time will be recorded and that will be you score.
+								Play as many times as you want to beat your best time!</li>
+							</li>
+						</ol>
+						<p>If you are having trouble finding the slug, remember, after two minutes we will
+							give you a hint! This hint will highlight areas to look out for. <br>If you are still
+							unable to find it, don't worry! You will automatically move on to the next level. <br>
+							But be careful, because the longer it takes, the higher your time. You want to try
+							and get the lowest time possible! </p>
+					</div>
+					<button class="tab" data-tab="tab3" id="start">START</button>
 				</div>
-				<button class="tab" data-tab="tab3" id="start">START</button>
-			  </div>
-			  <div class="tab-pane" data-tab-content="tab2" id="about">
-				<h3>About Us</h3>
-				<p>XXXXXXX</p>
-			  </div>
-			  <div class="tab-pane" data-tab-content="tab3" id="location1">
-				<h3>Location 1</h3>
-					
+				<div class="tab-pane" data-tab-content="tab2" id="about">
+					<h3>About Us</h3>
+					<p>XXXXXXX</p>
+				</div>
+				<div class="tab-pane" data-tab-content="tab3" id="location1">
+					<h3>Location 1</h3>
+					<p id="time-p"></p>
 					<div id="img-body">
 						<div id="canvas-div">
-							<canvas id="img-canvas" width="1920px" height="1080px" style="position: absolute; left: 0; top: 0;">
+							<canvas id="img-canvas" width="1920px" height="1400px"
+								style="position: absolute; left: 0; top: 0;">
 							</canvas>
-							<canvas id="box-canvas" width="1920px" height="1080px" style="position: absolute; left: 0; top: 0;">
-							</canvas>
-							<canvas id="slug-canvas" width="1920px" height="1080px" style="position: absolute; left: 0; top: 0;">
-							</canvas>
-						</div>
-						<div id="time-div">
-							<p id="time-p"></p>
 						</div>
 					</div>
-
-
-				
-
-			  </div>
+				</div>
 			</div>
 		</section>
 	</main>

@@ -63,7 +63,7 @@ function main() {
   var slugHeight = 1097.0;
   var numberOfAreas = 5;
   var xOffset = 210;
-  var yOffset = 40;
+  var yOffset = 300;
   const area1 = new Area(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
   const area2 = new Area(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
   const area3 = new Area(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
@@ -124,7 +124,7 @@ function main() {
     //draw the slug on the slug canvas layer at this coordinate location
     //ctx.drawImage(slug1Img, coords[3] - (slugHeight/2),coords[2] - (slugWidth/2), slug1Img.naturalWidth/10, slug1Img.naturalHeight/10);
     
-    $("#slug-canvas").drawImage({
+    $("#img-canvas").drawImage({
       name: "slugImg",
       source: 'img/slug1.jpg',
       x: coords[2] - (slugWidth/2),
