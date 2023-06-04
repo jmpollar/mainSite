@@ -4,7 +4,6 @@
 
 // Constants
 
-/*his stuff*/
 $("#hideSimpleBtn").click(function () {
   $("#simpleDiv").hide();
 });
@@ -28,6 +27,13 @@ $('.tab').click(function () {
   $('.tab-pane').removeClass('active');
   // Show the tab pane corresponding to the clicked tab
   $('[data-tab-content="' + tabId + '"]').toggleClass('active');
+
+  // specific location tabs
+  if (tabId === 'tab3') {
+    $('body').css('background-image', "url('img/photo1.png')");
+    $(this).removeAttr('id');
+  }
+
   //set gameStarted to true
   gameStarted = true;
   //function to increment time elapsed
@@ -60,9 +66,10 @@ function main() {
   //when start button clicked
   $("#start").click(function () {
     //disable nav bar and slug imgs
-    $(".tab-bar").hide();
+    /*$(".tab-bar").hide();
     $("#text").hide();
-    $("#homeSlug").hide();
+    $("#homeSlug").hide();*/
+    $(".nav-bar").hide();
     //after 30 seconds, highlight the quadrant the slug is in
     const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
 
