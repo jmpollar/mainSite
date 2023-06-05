@@ -30,8 +30,8 @@ $('.tab').click(function () {
 
   // specific location tabs
   if (tabId === 'tab3') {
+    $(".nav-bar").hide();
     $('body').css('background-image', "url('img/photo1.png')");
-    $(this).removeAttr('id');
   }
 
   //set gameStarted to true
@@ -65,11 +65,6 @@ function myFunction(param1, param2) {
 function main() {
   //when start button clicked
   $("#start").click(function () {
-    //disable nav bar and slug imgs
-    /*$(".tab-bar").hide();
-    $("#text").hide();
-    $("#homeSlug").hide();*/
-    $(".nav-bar").hide();
     //after 30 seconds, highlight the quadrant the slug is in
     const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
 
