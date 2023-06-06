@@ -42,7 +42,7 @@ $('.tab').click(function () {
     console.log("placed");
     // Add an event listener for click
     imageEl.on('click', function () {
-      console.log('Image clicked!');
+      $("#location1").append("<p>Fun Fact??? <br> or make a pop up or have this here but just styled better</p>");
   });
   ///////////////////////////////////////
 
