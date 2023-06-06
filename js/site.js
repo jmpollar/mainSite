@@ -20,6 +20,8 @@ $('.tab').click(function () {
   if (tabId === 'tab3') {
     $(".nav-bar").hide();
     $('body').css('background-image', "url('img/photo1.png')");
+
+    //////////////// turn this into a function ////////////////////////
     // Define image URL and coords
     var imageUrl = "img/slug1.jpg";
     var imageX = 300;
@@ -42,6 +44,8 @@ $('.tab').click(function () {
     imageEl.on('click', function () {
       console.log('Image clicked!');
   });
+  ///////////////////////////////////////
+
   }
 })
 
