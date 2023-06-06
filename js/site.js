@@ -26,12 +26,13 @@ $('.tab').click(function () {
     //////////////// turn this into a function ////////////////////////
     // Define image URL and coords
     var imageUrl = "img/slug1.jpg";
-    var imageX = 300;
-    var imageY = 300;
+    //var imageX = 300;
+    //var imageY = 300;
     // Create image element
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug1");
+    drawSluggy();
 
     ///////////////////////////////////////
 
@@ -122,7 +123,7 @@ function drawSluggy() {
   console.log(coords[2] + coords[3]);
 
   // Set position using CSS
-  imageEl.css({
+  $("imageEl").css({
     'position': 'absolute',
     'left': (Number(coords[2]) - Number(slugWidth / 2)).toString() + 'px',
     'top': (Number(coords[3]) - Number(slugHeight / 2)).toString() + 'px'
@@ -132,12 +133,13 @@ function drawSluggy() {
   imageBody.append(imageEl);
   console.log("placed");
   // Add an event listener for click
-  imageEl.on('click', function () {
+  $("imageEl").on('click', function () {
     $("#location1").append("<p>Fun Fact??? <br> or make a pop up or have this here but just styled better</p>");
     // maybe have a button to move to the next location 
     // (it can be like the start button where that is what makes it go to the next tab)
   });
 }
+/*
 function drawBoxes() {
   //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
   var ctx = imgCanvas.getContext("2d");
@@ -212,6 +214,7 @@ function drawQuadrant(quad) {
       break;
   }
 }
+
 // When a tab is clicked
 $('.tab').click(function () {
   // Get the value of the data-tab attribute of the clicked tab
@@ -268,8 +271,6 @@ $("#img-canvas").click(function (clickPos) {
 })
 
 
-
-
 $("#hideSimpleBtn").click(function () {
   $("#simpleDiv").hide();
 });
@@ -284,4 +285,4 @@ $("#start").click(function () {
   //after 120 seconds, highlight the quadrant the slug is in
   const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
 
-});
+});*/
