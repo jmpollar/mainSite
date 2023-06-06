@@ -19,9 +19,10 @@ var slugHeight = 47;
 var numberOfAreas = 5;
 var xOffset = 0;
 var yOffset = 0;
+//initialize timer
 
-//hide img canvas until game start
-imgCanvas.hide();
+var timeParagraph = $("#time-p");
+
 
 // Imported from Location X JS 
 //create a clock to track time
@@ -52,35 +53,6 @@ function getRandomInteger(min, max) {
 //determine teh random coordinates
 var coords = chooseCoordinates();
 
-
-// When a tab is clicked
-$('.tab').click(function () {
-  // Get the value of the data-tab attribute of the clicked tab
-  var tabId = $(this).data('tab');
-
-  // Remove the 'active' class from all tabs
-  $('.tab').removeClass('active');
-  // Add the 'active' class to the clicked tab
-  $(this).toggleClass('active');
-  // Hide all tab panes
-  $('.tab-pane').removeClass('active');
-  // Show the tab pane corresponding to the clicked tab
-  $('[data-tab-content="' + tabId + '"]').toggleClass('active');
-
-  // specific location tabs
-  if (tabId === 'tab3') {
-    $(".nav-bar").hide();
-    $('body').css('background-image', "url('img/photo1.png')");
-    imgCanvas.show();
-    //set gameStarted to true
-    gameStarted = true;
-
-    console.log("GAME STARTED: " + gameStarted);
-  }
-
-
-});
-
 $("#hideSimpleBtn").click(function () {
   $("#simpleDiv").hide();
 });
@@ -88,19 +60,6 @@ $("#hideSimpleBtn").click(function () {
 $("#showSimpleBtn").click(function () {
   $("#simpleDiv").show();
 });
-
-//KIND OF works, but changing the window size changes click position which is an issue, if only we could make the image an el at a specific spot.
-/*$("#img-canvas").click(function (clickPos) {
-  console.log(clickPos.clientX + " " + clickPos.clientY);
-  //when the slug is clicked, event listener
-  if (gameStarted === true && (clickPos.clientX <= coords[2] + 100 && clickPos.clientX >= coords[2] - 100) && (clickPos.clientY <= coords[3] + 100 && clickPos.clientY >= coords[3] - 100)) {
-    console.log("HIT");
-    var ctx = imgCanvas.getContext("2d");
-    //hide the slug
-    ctx.clearRect(0, 0, $("#img-canvas").width, $("#img-canvas").height);
-  }
-
-});*/
 
 // When a tab is clicked
 $('.tab').click(function () {
@@ -130,6 +89,7 @@ $('.tab').click(function () {
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug1");
+    timeParagraph.append("<div id=level-timer>00:00:00</div>")
     ///////////////////////////////////////
     //call drawSluggy now for testing but this will be called with an html listener of sorts later
     //get random coordinates from the function
@@ -140,7 +100,9 @@ $('.tab').click(function () {
   }
 })
 
-
+function main() {
+  
+}
 //define function that randomly selects an area and selects coordinates based off that
 function chooseCoordinates() {
   var randAreaNum = Math.floor(Math.random() * numberOfAreas) + 1;

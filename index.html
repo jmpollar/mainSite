@@ -21,14 +21,11 @@
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js"
 		integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-	<!--jCanvas library for drawing shapes-->
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"
-		integrity="sha512-pu2L+33GBCuTrTU3mNJphG2Hm2JKlLA01280LIiz29D40f/UFOU5dEVxVuW46p+HZeZhXvQsUxtVFxPabX9S9g=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-
-	<!--phaser3 library-->
-	<!--<script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>-->
-
+	<!--EasyTimer.js library-->
+	<script src="lib/easytimer/dist/easytimer.min.js"></script>
+	<script>
+		var timerNew = new Timer();
+	</script>
 	<!--Interact library-->
 	<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
@@ -78,7 +75,7 @@
 				<div id="img-body">
 				<div class="tab-pane" data-tab-content="tab3" id="location1">
 					<h3>Location 1</h3>
-					<p id="time-p">time</p>
+					<p id="time-p"></p>
 				</div>
 			</div>
 			</div>
