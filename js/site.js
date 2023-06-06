@@ -2,6 +2,75 @@
 // Author: Your Name
 // Date:
 
+// When a tab is clicked
+$('.tab').click(function () {
+  // Get the value of the data-tab attribute of the clicked tab
+  var tabId = $(this).data('tab');
+
+  // Remove the 'active' class from all tabs
+  $('.tab').removeClass('active');
+  // Add the 'active' class to the clicked tab
+  $(this).toggleClass('active');
+  // Hide all tab panes
+  $('.tab-pane').removeClass('active');
+  // Show the tab pane corresponding to the clicked tab
+  $('[data-tab-content="' + tabId + '"]').toggleClass('active');
+
+  // specific location tabs
+  if (tabId === 'tab3') {
+    $(".nav-bar").hide();
+    $('body').css('background-image', "url('img/photo1.png')");
+    // Define image URL and coords
+    var imageUrl = "img/slug1.jpg";
+    var imageX = 300;
+    var imageY = 300;
+    // Create image element
+    var imageEl = $('<img>');
+    imageEl.attr('src', imageUrl);
+    imageEl.attr('id', "slug1");
+    // Set position using CSS
+    imageEl.css({
+      'position': 'absolute',
+      'left': imageX + 'px',
+      'top': imageY + 'px'
+    });
+    // Append to the container
+    var imageBody = $('#img-body');
+    imageBody.append(imageEl);
+    console.log("placed");
+    // Add an event listener for click
+    imageEl.on('click', function () {
+      console.log('Image clicked!');
+  });
+  }
+})
+
+  //set gameStarted to true
+/*gameStarted = true;
+
+console.log("GAME STARTED: " + gameStarted);
+});
+
+$("#hideSimpleBtn").click(function () {
+$("#simpleDiv").hide();
+});
+
+$("#showSimpleBtn").click(function () {
+$("#simpleDiv").show();
+});
+var gameStarted = false;
+var startTime;
+//when start button clicked
+$("#start").click(function () {
+//after 30 seconds, highlight the quadrant the slug is in
+const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
+
+});*/
+
+
+
+
+/*
 // Constants
 class SlugGame extends Phaser.Scene {
   //constructor (PHASER)
@@ -23,7 +92,7 @@ class SlugGame extends Phaser.Scene {
   }
 
   create() {
-    /* Imported from Location X JS */
+    // Imported from Location X JS 
     //create a clock to track time
     class Area {
       constructor(minX, minY, maxX, maxY) {
@@ -35,7 +104,7 @@ class SlugGame extends Phaser.Scene {
     }
     var rect1, rect2, rect3, rect4, rect5;
     var quaddie1, quaddie2, quaddie3, quaddie4;
-    var imgCanvas = document.getElementById("img-canvas");
+    var imgCanvas = document.getElById("img-canvas");
     var coords;
     var currentQuadrant;
     var photo1Width = 1500;
@@ -120,16 +189,17 @@ class SlugGame extends Phaser.Scene {
         fromCenter: false
       });
       */
-      let slug1Img = new Image( (coords[2] - (slugWidth / 2)), (coords[3] - (slugHeight / 2)), "slug1");
-      console.log(this.slug1Img);
-      /* var ctx = imgCanvas.getContext("2d");
-      //draw the slug on the slug canvas layer at this coordinate location
-      var slug1 = $("#img-canvas").append("<img src=img/slug1.jpg id=slug1id>");
-  
-      $("#img-canvas").drawImage(slug1, coords[2] - (slugWidth / 2), coords[3] - (slugHeight / 2), slugWidth/10, slugHeight/10);
-  
-   */
-
+/*
+ let slug1Img = new Image( (coords[2] - (slugWidth / 2)), (coords[3] - (slugHeight / 2)), "slug1");
+ console.log(this.slug1Img);
+ /* var ctx = imgCanvas.getContext("2d");
+ //draw the slug on the slug canvas layer at this coordinate location
+ var slug1 = $("#img-canvas").append("<img src=img/slug1.jpg id=slug1id>");
+ 
+ $("#img-canvas").drawImage(slug1, coords[2] - (slugWidth / 2), coords[3] - (slugHeight / 2), slugWidth/10, slugHeight/10);
+ 
+*/
+/*
     }
 
     function drawBoxes() {
@@ -258,7 +328,7 @@ class SlugGame extends Phaser.Scene {
 
     });
 
-    //KIND OF works, but changing the window size changes click position which is an issue, if only we could make the image an element at a specific spot.
+    //KIND OF works, but changing the window size changes click position which is an issue, if only we could make the image an el at a specific spot.
     $("#img-canvas").click(function (clickPos) {
       console.log(clickPos.clientX + " " + clickPos.clientY);
       //when the slug is clicked, event listener
@@ -303,7 +373,6 @@ game.scene.add("Boot", SlugGame, true);
 
 function main() {
 
-
 }
 
 
@@ -312,3 +381,4 @@ function main() {
 // let's get this party started
 main();
 
+*/

@@ -137,6 +137,10 @@ ul {
   text-align: center;
 }
 
+#slug1 {
+  max-width: 50px;
+}
+
 /* tabs */
 .hidden {
   display: none;
