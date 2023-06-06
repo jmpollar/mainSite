@@ -20,7 +20,7 @@ var numberOfAreas = 5;
 var xOffset = 0;
 var yOffset = 0;
 //initialize timer
-
+var timerNew = new easytimer.Timer();
 var timeParagraph = $("#time-p");
 
 
@@ -89,14 +89,18 @@ $('.tab').click(function () {
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug1");
-    timeParagraph.append("<div id=level-timer>00:00:00</div>")
+    timerNew.start();
+    timerNew.addEventListener('secondsUpdated', function(e) {
+      timeParagraph.html("TIME ELAPSED: " + timerNew.getTimeValues().toString());
+    })
+    
     ///////////////////////////////////////
     //call drawSluggy now for testing but this will be called with an html listener of sorts later
     //get random coordinates from the function
     drawSluggy();
     //drawBoxes();
     //after 30 seconds, highlight the quadrant the slug is in
-    const showQuadTimeout = setTimeout(drawQuadrant, 9000, currentQuadrant);
+    //const showQuadTimeout = setTimeout(drawQuadrant, 9000, currentQuadrant);
   }
 })
 
