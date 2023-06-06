@@ -43,6 +43,8 @@ $('.tab').click(function () {
     // Add an event listener for click
     imageEl.on('click', function () {
       $("#location1").append("<p>Fun Fact??? <br> or make a pop up or have this here but just styled better</p>");
+      // maybe have a button to move to the next location 
+      // (it can be like the start button where that is what makes it go to the next tab)
   });
   ///////////////////////////////////////
 
