@@ -200,3 +200,7 @@ canvas {
  
   position: absolute;
 }
+
+#location-1-title {
+  margin-top: -23px;
+}
