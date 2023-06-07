@@ -42,9 +42,13 @@ const area4 = new Area(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOff
 const area5 = new Area(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
 
 //declare quadrants
+//upper left
 const quad1 = new Area(xOffset, yOffset, xOffset + (photo1Width / 2), yOffset + (photo1Height / 2));
+//upper right
 const quad2 = new Area(xOffset + (photo1Width / 2), yOffset, xOffset + (photo1Width), yOffset + (photo1Height / 2));
+//lower left
 const quad3 = new Area(xOffset, yOffset + (photo1Height / 2), xOffset + (photo1Width / 2), yOffset + (photo1Height));
+//lower right
 const quad4 = new Area(xOffset + (photo1Width / 2), yOffset + (photo1Height / 2), xOffset + (photo1Width), yOffset + (photo1Height));
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -99,8 +103,8 @@ $('.tab').click(function () {
     //get random coordinates from the function
     drawSluggy();
     //drawBoxes();
-    //after 30 seconds, highlight the quadrant the slug is in
-    //const showQuadTimeout = setTimeout(drawQuadrant, 9000, currentQuadrant);
+    //after 120 seconds, highlight the quadrant the slug is in
+    const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
   }
 })
 
@@ -163,6 +167,8 @@ function drawSluggy() {
     $("#location1").append("<p style= font-size:12px;>“In 1981, UCSC joined Division III of the NCAA. Since the application required an official team name, UCSC’s then-chancellor polled the student players, and out of this small group emerged a consensus for a new moniker—the sea lions. But the new name did not find favor with the majority of students, who continued to root for the Slugs. After five years of dealing with the two-mascot problem, an overwhelming pro-Slug straw vote by students in 1986 convinced the chancellor to make the lowly but beloved Banana Slug UCSC’s official mascot.”</p>");
     //hide the slug
     imageEl.hide();
+    //hide the hint
+    $("#hint-p").hide();
     //pause the timer
     timerNew.pause();
     // maybe have a button to move to the next location 
@@ -195,15 +201,19 @@ function drawSluggy() {
 }*/
 
 //find out what quadrant the slug is in
+//UL
 if (coords[2] >= xOffset && coords[3] >= yOffset && coords[2] <= xOffset + (photo1Width / 2) && coords[3] <= yOffset + (photo1Height / 2)) {
   currentQuadrant = 0;
 }
-else if (coords[2] >= xOffset + (photo1Width / 2) && coords[3] >= yOffset && coords[2] <= xOffset + (photo1Width) && coords[3] >= yOffset + (photo1Height / 2)) {
+//UR
+else if (coords[2] >= xOffset + (photo1Width / 2) && coords[3] >= yOffset && coords[2] <= xOffset + (photo1Width) && coords[3] <= yOffset + (photo1Height / 2)) {
   currentQuadrant = 1;
 }
+//LL
 else if (coords[2] >= xOffset && coords[3] >= yOffset + (photo1Height / 2) && coords[2] <= xOffset + (photo1Width / 2) && coords[3] <= yOffset + (photo1Height)) {
   currentQuadrant = 2;
 }
+//LR
 else if (coords[2] >= xOffset + (photo1Width / 2) && coords[3] >= yOffset + (photo1Height / 2) && coords[2] <= xOffset + (photo1Width) && coords[3] <= yOffset + (photo1Height)) {
   currentQuadrant = 3;
 }
@@ -215,28 +225,16 @@ function drawQuadrant(quad) {
   //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
   switch (quad) {
     case 0:
-      var ctx = imgCanvas.getContext("2d");
-      ctx.beginPath();
-      quaddie1 = ctx.rect(quad1.minX, quad1.minY, (quad1.maxX - quad1.minX), (quad1.maxY - quad1.minY));
-      ctx.stroke();
+      $("#location-1-title").append("<p id=hint-p style=color:red;>HINT: It's in the upper left!");
       break;
     case 1:
-      var ctx = imgCanvas.getContext("2d");
-      ctx.beginPath();
-      quaddie2 = ctx.rect(quad2.minX, quad2.minY, (quad2.maxX - quad2.minX), (quad2.maxY - quad2.minY));
-      ctx.stroke();
+      $("#location-1-title").append("<p id=hint-p style=color:red;>HINT: It's in the upper right!");
       break;
     case 2:
-      var ctx = imgCanvas.getContext("2d");
-      ctx.beginPath();
-      quaddie3 = ctx.rect(quad3.minX, quad3.minY, (quad3.maxX - quad3.minX), (quad3.maxY - quad3.minY));
-      ctx.stroke();
+      $("#location-1-title").append("<p id=hint-p style=color:red;>HINT: It's in the lower left!");
       break;
     case 3:
-      var ctx = imgCanvas.getContext("2d");
-      ctx.beginPath();
-      quaddie4 = ctx.rect(quad4.minX, quad4.minY, (quad4.maxX - quad4.minX), (quad4.maxY - quad4.minY));
-      ctx.stroke();
+      $("#location-1-title").append("<p id=hint-p style=color:red;>HINT: It's in the lower right!");
       break;
   }
 }
