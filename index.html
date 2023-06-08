@@ -34,10 +34,10 @@
 		<h1 id="site-title">Find the Slug</h1>
 		<ul class="tab-bar">
 			<li class="tab active button" data-tab="tab1">Home</li>
-			<li class="tab active button" data-tab="tab2">About Us</li>
+			<li class="tab button" data-tab="tab2">About Us</li>
 		</ul>
-		<img id="text" src="img/text.PNG">
-		<img id="homeSlug" src="img/slug_base.png">
+		<img id="text" class="titleImage" src="img/text.PNG">
+		<img id="homeSlug" class="titleImage" src="img/slug_base.png">
 	</div>
 	<main id="content">
 		<section class="tabbed-section">
@@ -46,13 +46,14 @@
 					<div id="instructions">
 						<h3>Instructions</h3>
 						<p><br>Find the slugs as fast as possible! Click start to begin the game.</p>
-						<ol>
-							<li>Once you have clicked start, a photo will appear and you have to find the
-								slug as quickly as you can. It can be anywhere on the photo!</li>
-							<li>Once you have found the slug, click on it to continue the game and learn something new!
-								There are 10 levels, and, remember, they get harder as you go!</li>
-							<li>Once you are finished your time will be recorded and that will be you score.
-								Play as many times as you want to beat your best time!</li>
+						<br>
+						<ol id="instList">
+							<li>Each level, a photo will appear and you have to find the
+								slug!</li>
+							<li>Find the slug and click it to learn something new!</li>
+							<li>Play as many times as you want to beat your best time!
+								<br>
+								Get through all 10 levels as quickly as you can!
 							</li>
 						</ol>
 						<p>If you are having trouble finding the slug, remember, after two minutes we will
@@ -68,9 +69,9 @@
 					<p>XXXXXXX</p>
 				</div>
 				<div id="img-body">
-					<div class="tab-pane" data-tab-content="tab3" id="location1">
+					<div class="tab-pane" data-tab-content="tab3" id="location1" class="location">
 						<h3 id="location-1-title">Location 1</h3>
-						<p id="time-p"></p>
+						<p id="time-p">TIME: 00:00:00</p>
 					</div>
 				</div>
 			</div>

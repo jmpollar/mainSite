@@ -12,7 +12,7 @@ body {
 }
 
 p {
-  margin: 0px;
+  margin: 10px;
 }
 
 h1 {
@@ -23,34 +23,42 @@ h1 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-h2,
-h3 {
+h2, h3 {
   font-family: sans-serif;
   text-align: center;
-  margin: 0px;
+  margin-block: 10px;
 }
 
 #content {
-  margin: 10px;
-  padding: 10px;
+  margin-block: 10px;
+  margin-inline: 200px;
+  padding-block: 20px;
+  padding-inline: 100px;
   border: solid 1px #888;
   background-color: #f0f0b6cf;
   text-align: center;
   width: 1920px;
   width: auto;
+  box-sizing: content-box;
+  backdrop-filter: blur(5px);
  
+}
+
+/* Home Slug */
+
+.titleImage {
+  float: right;
+  margin-right: 80px;
 }
 
 #text {
   width: 100px;
-  float: right;
   margin-top: -100px;
   
 }
 
 #homeSlug {
   width: 225px;
-  float: right;
   margin-top: -80px;
 
 }
@@ -74,7 +82,7 @@ h3 {
 /* nav bar */
 
 #site-title {
-  margin: 0px;
+  margin-top: 10px;
 }
 
 ul {
@@ -84,26 +92,28 @@ ul {
 }
 
 .nav-bar {
-  background-color: #f0f0b6f5;
-  padding: 10px;
-  margin-bottom: 10px;
+  background-color: #f0f0b6ef;
   border: solid 1px #888;
-  height: 120px;
-  width: auto;
-  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: content-box;
+  backdrop-filter: blur(5px);
 }
 
 /*Instructions and start block*/
+
 #start {
-  background-color: #386a94;
   /* Highlight */
-  border: 2px;
+  background-color: #386a94;
   color: rgb(255, 255, 255);
+  border-radius: 25px;
+  border: 2px;
   padding: 15px 32px;
+  margin-bottom: 30px;
   text-align: center;
   display: inline-block;
   font-size: 30px;
-  border-radius: 25px;
+
   /* Animation */
   transition: 0.2s;
   transition-timing-function: ease-out;
@@ -119,10 +129,13 @@ ul {
   list-style-position: inside;
 }
 
+#instList {
+  font-weight: bold;
+}
+
 #home {
   padding: 30px;
   text-align: center;
-  min-height: 1000px;
   height: auto;
 }
 
@@ -132,14 +145,23 @@ ul {
   text-align: center;
 }
 
-/*Location 1*/
-#location1 {
-  padding: 20px;
+/*Location Titles*/
+.location {
   text-align: center;
 }
 
 #slug1 {
   max-width: 50px;
+}
+
+/* Facts */
+#fact {
+  margin-block: 20px;
+}
+
+/* Hint Text */
+#hint-p {
+box-sizing: inherit;
 }
 
 /* tabs */
@@ -179,7 +201,6 @@ ul {
 .tab-pane {
   display: none;
   min-height: 10px;
-  height: 100px;
 }
 
 .tab-pane.active {
@@ -199,8 +220,4 @@ canvas {
   min-width: 1800px;
  
   position: absolute;
-}
-
-#location-1-title {
-  margin-top: -23px;
 }
