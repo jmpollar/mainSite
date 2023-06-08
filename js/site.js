@@ -104,7 +104,7 @@ $('.tab').click(function () {
     drawSluggy();
     //drawBoxes();
     //after 120 seconds, highlight the quadrant the slug is in
-    const showQuadTimeout = setTimeout(drawQuadrant, 120000, currentQuadrant);
+    const showQuadTimeout = setTimeout(drawQuadrant, 60000, currentQuadrant);
   }
 })
 
@@ -171,6 +171,7 @@ function drawSluggy() {
     $("#hint-p").hide();
     //pause the timer
     timerNew.pause();
+    timeParagraph.html("FINAL TIME: " + timerNew.getTimeValues().toString());
     // maybe have a button to move to the next location 
     // (it can be like the start button where that is what makes it go to the next tab)
   });
