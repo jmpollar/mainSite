@@ -112,7 +112,8 @@ $('.tab').click(function () {
   // specific location tabs
   if (tabId === 'tab3') {
     $(".nav-bar").hide();
-    $('body').css({ 'background-image': "url('img/photo1.png')", 'background-repeat': 'no-repeat' });
+    $('body').css({ 'background-image': "url('img/photo1.png')", 'background-repeat': 'no-repeat', 'backdrop-filter' : 'blur(0px)' });
+  
     /*   $('body').css({'background-image' : "url('img/photo1.png')", 'background-position' : 'center', 'background-size' : 'cover', 'position' : 'relative', 'width' : '100%', 'height' : '100%'});*/
     //////////////// turn this into a function ////////////////////////
     // Define image URL and coords
