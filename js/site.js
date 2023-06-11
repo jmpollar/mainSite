@@ -23,7 +23,36 @@ var yOffset = 0;
 var timerNew = new easytimer.Timer();
 var timeParagraph = $("#time-p");
 
+var ajaxGetSlugFacts;
 
+//access the slug fact data via AJAX
+//route it through AJAX again
+$.ajax({
+  // The URL for the request (from the api docs)
+  url: "https://api.api-ninjas.com/v1/animals?name=slug",
+
+  headers: { 'X-Api-Key': 'oVAusz8WBRoEjqP6hwqjoA==UBfGCXc89PsCxi0U' },
+  // The data to send (will be converted to a query string)
+  data: {},
+  // Whether this is a POST or GET request
+  type: "GET",
+  // The type of data we expect back
+  dataType: "json",
+  // What do we do when the api call is successful
+  //   all the action goes in here
+  success: function (data) {
+    // do stuff
+    ajaxGetSlugFacts = data;
+    console.log(ajaxGetSlugFacts);
+    console.log(ajaxGetSlugFacts[0].characteristics);
+    console.log(ajaxGetSlugFacts[1].characteristics);
+  },
+  // What we do if the api call fails
+  error: function (jqXHR, textStatus, errorThrown) {
+    // do stuff
+    console.log("Error:", textStatus, errorThrown);
+  }
+})
 // Imported from Location X JS 
 //create a clock to track time
 class Area {
@@ -50,6 +79,7 @@ const quad2 = new Area(xOffset + (photo1Width / 2), yOffset, xOffset + (photo1Wi
 const quad3 = new Area(xOffset, yOffset + (photo1Height / 2), xOffset + (photo1Width / 2), yOffset + (photo1Height));
 //lower right
 const quad4 = new Area(xOffset + (photo1Width / 2), yOffset + (photo1Height / 2), xOffset + (photo1Width), yOffset + (photo1Height));
+
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -94,10 +124,10 @@ $('.tab').click(function () {
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug1");
     timerNew.start();
-    timerNew.addEventListener('secondsUpdated', function(e) {
+    timerNew.addEventListener('secondsUpdated', function (e) {
       timeParagraph.html("TIME: " + timerNew.getTimeValues().toString());
     })
-    
+
     ///////////////////////////////////////
     //call drawSluggy now for testing but this will be called with an html listener of sorts later
     //get random coordinates from the function
@@ -109,7 +139,7 @@ $('.tab').click(function () {
 })
 
 function main() {
-  
+
 }
 //define function that randomly selects an area and selects coordinates based off that
 function chooseCoordinates() {
@@ -165,6 +195,65 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location1").append("<p class='fact'>“In 1981, UCSC joined Division III of the NCAA. Since the application required an official team name, UCSC’s then-chancellor polled the student players, and out of this small group emerged a consensus for a new moniker—the sea lions. But the new name did not find favor with the majority of students, who continued to root for the Slugs. After five years of dealing with the two-mascot problem, an overwhelming pro-Slug straw vote by students in 1986 convinced the chancellor to make the lowly but beloved Banana Slug UCSC’s official mascot.”</p>");
+    //print random slug stat (for this level: land slug characteristics)
+    var randFactInt = getRandomInteger(0, 15);
+    $("#location1").append("<p class=fact-title>SLIMY SLUG STATS</p>");
+    var randFactStr;
+    switch (randFactInt) {
+      case 0:
+        randFactStr = "Age of sexual maturity: " + ajaxGetSlugFacts[1].characteristics.age_of_sexual_maturity;
+        break;
+      case 1:
+        randFactStr = "Colors: Brown, Grey, Black, Green";
+        break;
+      case 2:
+        randFactStr = "Common Name: " + ajaxGetSlugFacts[1].characteristics.common_name;
+        break;
+      case 3:
+        randFactStr = "Diet: " + ajaxGetSlugFacts[1].characteristics.diet;
+        break;
+      case 4:
+        randFactStr = "Gestation Period: " + ajaxGetSlugFacts[1].characteristics.gestation_period;
+        break;
+      case 5:
+        randFactStr = "Habitat: " + ajaxGetSlugFacts[1].characteristics.habitat;
+        break;
+      case 6:
+        randFactStr = "Length: " + ajaxGetSlugFacts[1].characteristics.length;
+        break;
+      case 7:
+        randFactStr = "Lifespan: " + ajaxGetSlugFacts[1].characteristics.lifespan;
+        break;
+      case 8:
+        randFactStr = "Litter Size: " + ajaxGetSlugFacts[1].characteristics.litter_size;
+        break;
+      case 9:
+        randFactStr = "Location: " + ajaxGetSlugFacts[1].characteristics.location;
+        break;
+      case 10:
+        randFactStr = "Other Name(s): " + ajaxGetSlugFacts[1].characteristics["other_name(s)"];
+        break;
+      case 11:
+        randFactStr = "Predators: " + ajaxGetSlugFacts[1].characteristics.predators;
+        break;
+      case 12:
+        randFactStr = "Prey: " + ajaxGetSlugFacts[1].characteristics.prey;
+        break;
+      case 13:
+        randFactStr = "Skin Type: " + ajaxGetSlugFacts[1].characteristics.skin_type;
+        break;
+      case 14:
+        randFactStr = "Top Speed: " + ajaxGetSlugFacts[1].characteristics.top_speed;
+        break;
+      case 15:
+        randFactStr = "Type: " + ajaxGetSlugFacts[1].characteristics.type;
+        break;
+      default:
+        randFactStr = "ERROR";
+        break;
+    }
+    $("#location1").append("<p class=random-slug-fact>" + randFactStr + "</p>");
+
     //hide the slug
     imageEl.hide();
     //hide the hint

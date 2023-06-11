@@ -221,3 +221,15 @@ canvas {
  
   position: absolute;
 }
+
+.random-slug-fact {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px; 
+  font-weight: bolder;
+  color: navy;
+}
+
+.fact-title {
+  font-size: 24px;
+  font-weight: bold;
+}
