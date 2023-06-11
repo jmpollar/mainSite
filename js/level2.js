@@ -55,7 +55,7 @@ $.ajax({
 })
 // Imported from Location X JS 
 //create a clock to track time
-class Area {
+class AreaLevel2 {
   constructor(minX, minY, maxX, maxY) {
     this.minX = minX;
     this.minY = minY;
@@ -64,21 +64,21 @@ class Area {
   }
 }
 
-const area1 = new Area(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
-const area2 = new Area(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
-const area3 = new Area(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
-const area4 = new Area(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
-const area5 = new Area(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
+const area1Level2 = new AreaLevel2(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
+const area2Level2 = new AreaLevel2(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
+const area3Level2 = new AreaLevel2(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
+const area4Level2 = new AreaLevel2(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
+const area5Level2 = new AreaLevel2(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
 
 //declare quadrants
-//upper left
-const quad1 = new Area(xOffset, yOffset, xOffset + (photo1Width / 2), yOffset + (photo1Height / 2));
+/*//upper left
+const quad1Level1 = new AreaLevel1(xOffset, yOffset, xOffset + (photo1Width / 2), yOffset + (photo1Height / 2));
 //upper right
-const quad2 = new Area(xOffset + (photo1Width / 2), yOffset, xOffset + (photo1Width), yOffset + (photo1Height / 2));
+const quad2Level1 = new AreaLevel1(xOffset + (photo1Width / 2), yOffset, xOffset + (photo1Width), yOffset + (photo1Height / 2));
 //lower left
-const quad3 = new Area(xOffset, yOffset + (photo1Height / 2), xOffset + (photo1Width / 2), yOffset + (photo1Height));
+const quad3Level1 = new AreaLevel1(xOffset, yOffset + (photo1Height / 2), xOffset + (photo1Width / 2), yOffset + (photo1Height));
 //lower right
-const quad4 = new Area(xOffset + (photo1Width / 2), yOffset + (photo1Height / 2), xOffset + (photo1Width), yOffset + (photo1Height));
+const quad4Level1 = new AreaLevel1(xOffset + (photo1Width / 2), yOffset + (photo1Height / 2), xOffset + (photo1Width), yOffset + (photo1Height));*/
 
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -148,22 +148,22 @@ function chooseCoordinates() {
   //assign the area based on that
   switch (randAreaNum) {
     case 1:
-      randArea = area1;
+      randArea = area1Level2;
       break;
     case 2:
-      randArea = area2;
+      randArea = area2Level2;
       break;
     case 3:
-      randArea = area3;
+      randArea = area3Level2;
       break;
     case 4:
-      randArea = area4;
+      randArea = area4Level2;
       break;
     case 5:
-      randArea = area5;
+      randArea = area5Level2;
       break;
     default:
-      randArea = area1;
+      randArea = area1Level2;
       console.log("OOPSIES");
       break;
   }
