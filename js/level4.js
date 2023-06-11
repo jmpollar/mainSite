@@ -115,7 +115,7 @@ $('.tab').click(function () {
     /*   $('body').css({'background-image' : "url('img/photo1.png')", 'background-position' : 'center', 'background-size' : 'cover', 'position' : 'relative', 'width' : '100%', 'height' : '100%'});*/
     //////////////// turn this into a function ////////////////////////
     // Define image URL and coords
-    var imageUrl = "img/slug1.jpg";
+    var imageUrl = "img/slug1.png";
     //var imageX = 300;
     //var imageY = 300;
     // Create image element
