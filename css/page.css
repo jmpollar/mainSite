@@ -151,13 +151,18 @@ ul {
   text-align: center;
 }
 
-/*Level1*/
+/*Slugs*/
 #slug1 {
   width: 70px;
 }
-/*Level1*/
 #slug2 {
   width: 70px;
+}
+#slug3 {
+  width: 200px;
+}
+#slug4 {
+  width: 200px;
 }
 
 /* Facts */

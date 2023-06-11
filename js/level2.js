@@ -21,8 +21,8 @@ var numberOfAreas = 5;
 var xOffset = 0;
 var yOffset = 0;
 //initialize timer
-var timerNew = new easytimer.Timer();
-var timeParagraph = $("#time-p");
+var timerNew2 = new easytimer.Timer();
+var timeParagraph2 = $("#location2 #time-p");
 
 var ajaxGetSlugFacts;
 
@@ -73,13 +73,13 @@ const area5Level2 = new AreaLevel2(1125 + xOffset, 750 + yOffset, 1480 + xOffset
 
 //declare quadrants
 /*//upper left
-const quad1Level2 = new AreaLevel2(xOffset, yOffset, xOffset + (photo1Width / 2), yOffset + (photo1Height / 2));
+const quad1Level2 = new AreaLevel2(xOffset, yOffset, xOffset + (photo2Width / 2), yOffset + (photo2Height / 2));
 //upper right
-const quad2Level2 = new AreaLevel2(xOffset + (photo1Width / 2), yOffset, xOffset + (photo1Width), yOffset + (photo1Height / 2));
+const quad2Level2 = new AreaLevel2(xOffset + (photo2Width / 2), yOffset, xOffset + (photo2Width), yOffset + (photo2Height / 2));
 //lower left
-const quad3Level2 = new AreaLevel2(xOffset, yOffset + (photo1Height / 2), xOffset + (photo1Width / 2), yOffset + (photo1Height));
+const quad3Level2 = new AreaLevel2(xOffset, yOffset + (photo2Height / 2), xOffset + (photo2Width / 2), yOffset + (photo2Height));
 //lower right
-const quad4Level2 = new AreaLevel2(xOffset + (photo1Width / 2), yOffset + (photo1Height / 2), xOffset + (photo1Width), yOffset + (photo1Height));*/
+const quad4Level2 = new AreaLevel2(xOffset + (photo2Width / 2), yOffset + (photo2Height / 2), xOffset + (photo2Width), yOffset + (photo2Height));*/
 
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -117,15 +117,13 @@ $('.tab').click(function () {
   
     // Define image URL and coords
     var imageUrl = "img/slug2.png";
-    //var imageX = 300;
-    //var imageY = 300;
     // Create image element
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug2");
-    timerNew.start();
-    timerNew.addEventListener('secondsUpdated', function (e) {
-      timeParagraph.html("TIME: " + timerNew.getTimeValues().toString());
+    timerNew2.start();
+    timerNew2.addEventListener('secondsUpdated', function (e) {
+      timeParagraph2.html("TIME: " + timerNew2.getTimeValues().toString());
     })
 
     drawSluggy();
@@ -246,17 +244,17 @@ function drawSluggy() {
         randFactStr = "ERROR";
         break;
     }
-    $("#location1").append("<p class=random-slug-fact>" + randFactStr + "</p>");
+    $("#location2").append("<p class=random-slug-fact>" + randFactStr + "</p>");
 
     //hide the slug
     imageEl.hide();
     //hide the hint
     $("#hint-p").hide();
     //pause the timer
-    timerNew.pause();
-    timeParagraph.html("FINAL TIME: " + timerNew.getTimeValues().toString());
+    timerNew2.pause();
+    timeParagraph2.html("FINAL TIME: " + timerNew2.getTimeValues().toString());
     // maybe have a button to move to the next location 
-    $("#location2").append("<button class=tab data-tab=tab5 id=buttons>Next Level</button>");
+    $("#location2").append("<button class=tab data-tab=tab5 id=buttons>Next Level (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
     $("#location2").on("click", "#buttons", function() {
       loadLevel3();
@@ -272,19 +270,19 @@ function drawSluggy() {
 
 //find out what quadrant the slug is in
 //UL
-if (coords[2] >= xOffset && coords[3] >= yOffset && coords[2] <= xOffset + (photo1Width / 2) && coords[3] <= yOffset + (photo1Height / 2)) {
+if (coords[2] >= xOffset && coords[3] >= yOffset && coords[2] <= xOffset + (photo2Width / 2) && coords[3] <= yOffset + (photo2Height / 2)) {
   currentQuadrant = 0;
 }
 //UR
-else if (coords[2] >= xOffset + (photo1Width / 2) && coords[3] >= yOffset && coords[2] <= xOffset + (photo1Width) && coords[3] <= yOffset + (photo1Height / 2)) {
+else if (coords[2] >= xOffset + (photo2Width / 2) && coords[3] >= yOffset && coords[2] <= xOffset + (photo2Width) && coords[3] <= yOffset + (photo2Height / 2)) {
   currentQuadrant = 1;
 }
 //LL
-else if (coords[2] >= xOffset && coords[3] >= yOffset + (photo1Height / 2) && coords[2] <= xOffset + (photo1Width / 2) && coords[3] <= yOffset + (photo1Height)) {
+else if (coords[2] >= xOffset && coords[3] >= yOffset + (photo2Height / 2) && coords[2] <= xOffset + (photo2Width / 2) && coords[3] <= yOffset + (photo2Height)) {
   currentQuadrant = 2;
 }
 //LR
-else if (coords[2] >= xOffset + (photo1Width / 2) && coords[3] >= yOffset + (photo1Height / 2) && coords[2] <= xOffset + (photo1Width) && coords[3] <= yOffset + (photo1Height)) {
+else if (coords[2] >= xOffset + (photo2Width / 2) && coords[3] >= yOffset + (photo2Height / 2) && coords[2] <= xOffset + (photo2Width) && coords[3] <= yOffset + (photo2Height)) {
   currentQuadrant = 3;
 }
 else {
