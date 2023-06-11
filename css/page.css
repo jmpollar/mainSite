@@ -101,9 +101,9 @@ ul {
   
 }
 
-/*Instructions and start block*/
+/*Instructions and buttons*/
 
-#start {
+#buttons {
   /* Highlight */
   background-color: #386a94;
   color: rgb(255, 255, 255);
@@ -120,7 +120,7 @@ ul {
   transition-timing-function: ease-out;
 }
 
-#start:hover {
+#buttons:hover {
   border-radius: 10px;
 }
 
@@ -151,8 +151,13 @@ ul {
   text-align: center;
 }
 
+/*Level1*/
 #slug1 {
-  max-width: 50px;
+  width: 70px;
+}
+/*Level1*/
+#slug2 {
+  width: 70px;
 }
 
 /* Facts */

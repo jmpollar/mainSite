@@ -1,6 +1,7 @@
-// index.js - purpose and description here
-// Author: Your Name
-// Date:
+// level1.js
+// Author: group 15
+// Date: 6/23
+
 //global var imageEl
 var imageEl;
 var gameStarted = false;
@@ -114,8 +115,6 @@ $('.tab').click(function () {
     $(".nav-bar").hide();
     $('body').css({ 'background-image': "url('img/photo1.png')", 'background-repeat': 'no-repeat', 'backdrop-filter' : 'blur(0px)' });
   
-    /*   $('body').css({'background-image' : "url('img/photo1.png')", 'background-position' : 'center', 'background-size' : 'cover', 'position' : 'relative', 'width' : '100%', 'height' : '100%'});*/
-    //////////////// turn this into a function ////////////////////////
     // Define image URL and coords
     var imageUrl = "img/slug1.png";
     //var imageX = 300;
@@ -129,9 +128,6 @@ $('.tab').click(function () {
       timeParagraph.html("TIME: " + timerNew.getTimeValues().toString());
     })
 
-    ///////////////////////////////////////
-    //call drawSluggy now for testing but this will be called with an html listener of sorts later
-    //get random coordinates from the function
     drawSluggy();
     //drawBoxes();
     //after 120 seconds, highlight the quadrant the slug is in
@@ -139,9 +135,6 @@ $('.tab').click(function () {
   }
 })
 
-function main() {
-
-}
 //define function that randomly selects an area and selects coordinates based off that
 function chooseCoordinates() {
   var randAreaNum = Math.floor(Math.random() * numberOfAreas) + 1;
@@ -263,33 +256,19 @@ function drawSluggy() {
     timerNew.pause();
     timeParagraph.html("FINAL TIME: " + timerNew.getTimeValues().toString());
     // maybe have a button to move to the next location 
+    $("#location1").append("<button class=tab data-tab=tab4 id=buttons>Next Level (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
+    $("#location1").on("click", "#buttons", function() {
+      loadLevel2();
+    });
   });
 }
 
-/*function drawBoxes() {
-  //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
-  var ctx = imgCanvas.getContext("2d");
-  ctx.beginPath();
-  ctx.strokeStyle = "#FF0000";
-  ctx.lineWidth = "4";
-  rect1 = ctx.rect(area1.minX, area1.minY, (area1.maxX - area1.minX), (area1.maxY - area1.minY));
-  ctx.stroke();
-
-  rect2 = ctx.rect(area2.minX, area2.minY, (area2.maxX - area2.minX), (area2.maxY - area2.minY));
-  ctx.stroke();
-
-  rect3 = ctx.rect(area3.minX, area3.minY, (area3.maxX - area3.minX), (area3.maxY - area3.minY));
-  ctx.stroke();
-
-
-  rect4 = ctx.rect(area4.minX, area4.minY, (area4.maxX - area4.minX), (area4.maxY - area4.minY));
-  ctx.stroke();
-
-
-  rect5 = ctx.rect(area5.minX, area5.minY, (area5.maxX - area5.minX), (area5.maxY - area5.minY));
-  ctx.stroke();
-}*/
+  function loadLevel2() {
+    var script = document.createElement("script");
+    script.src = "./js/level2.js";
+    document.head.appendChild(script);
+  }
 
 //find out what quadrant the slug is in
 //UL
@@ -331,3 +310,26 @@ function drawQuadrant(quad) {
 }
 
 
+/*function drawBoxes() {
+  //draw the rectangles to ensure areas are consistent WILL REMOVE LATER
+  var ctx = imgCanvas.getContext("2d");
+  ctx.beginPath();
+  ctx.strokeStyle = "#FF0000";
+  ctx.lineWidth = "4";
+  rect1 = ctx.rect(area1.minX, area1.minY, (area1.maxX - area1.minX), (area1.maxY - area1.minY));
+  ctx.stroke();
+
+  rect2 = ctx.rect(area2.minX, area2.minY, (area2.maxX - area2.minX), (area2.maxY - area2.minY));
+  ctx.stroke();
+
+  rect3 = ctx.rect(area3.minX, area3.minY, (area3.maxX - area3.minX), (area3.maxY - area3.minY));
+  ctx.stroke();
+
+
+  rect4 = ctx.rect(area4.minX, area4.minY, (area4.maxX - area4.minX), (area4.maxY - area4.minY));
+  ctx.stroke();
+
+
+  rect5 = ctx.rect(area5.minX, area5.minY, (area5.maxX - area5.minX), (area5.maxY - area5.minY));
+  ctx.stroke();
+}*/
