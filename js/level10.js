@@ -263,6 +263,11 @@ function drawSluggy() {
     timeParagraph10.html("FINAL TIME: " + timerNew10.getTimeValues().toString());
     // maybe have a button to move to the next location 
     // (it can be like the start button where that is what makes it go to the next tab)
+    $("#location10").append('<button class="tab" data-tab="tab13" id="buttons">All Done!</button>');
+    $("#location10").on("click", "#buttons", function () {
+      $('.tab[data-tab="tab13"]').trigger('click');
+    });
+    
   });
 }
 
