@@ -21,8 +21,8 @@ var numberOfAreas = 5;
 var xOffset = 0;
 var yOffset = 0;
 //initialize timer
-var timerNew8 = new easytimer.Timer();
-var timeParagraph8 = $("#location8 #time-p");
+var timerNew = new easytimer.Timer();
+var timeParagraph = $("#time-p");
 
 var ajaxGetSlugFacts;
 
@@ -260,6 +260,11 @@ function drawSluggy() {
       loadLevel9();
     });
   });
+  function loadLevel9() {
+    var script = document.createElement("script");
+    script.src = "./js/level9.js";
+    document.head.appendChild(script);
+  }
 }
 
   function loadLevel9() {

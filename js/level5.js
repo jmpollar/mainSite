@@ -21,8 +21,8 @@ var numberOfAreas = 5;
 var xOffset = 0;
 var yOffset = 0;
 //initialize timer
-var timerNew5 = new easytimer.Timer();
-var timeParagraph5 = $("#location5 #time-p");
+var timerNew = new easytimer.Timer();
+var timeParagraph = $("#time-p");
 
 var ajaxGetSlugFacts;
 
@@ -117,6 +117,8 @@ $('.tab').click(function () {
   
     // Define image URL and coords
     var imageUrl = "img/slug5.png";
+    //var imageX = 300;
+    //var imageY = 300;
     // Create image element
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
@@ -256,10 +258,13 @@ function drawSluggy() {
     // maybe have a button to move to the next location 
     $("#location5").append("<button class=tab data-tab=tab8 id=buttons>Next Level (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
-    $("#location5").on("click", "#buttons", function() {
-      loadLevel6();
-    });
   });
+
+  function loadLevel6() {
+    var script = document.createElement("script");
+    script.src = "./js/level6.js";
+    document.head.appendChild(script);
+  }
 }
 
   function loadLevel6() {

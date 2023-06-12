@@ -111,12 +111,15 @@ $('.tab').click(function () {
   $('[data-tab-content="' + tabId + '"]').toggleClass('active');
 
   // specific location tabs
-  if (tabId === 'tab12') {
+  if (tabId === 'tab3') {
     $(".nav-bar").hide();
-    $('body').css({ 'background-image': "url('img/photo10.png')", 'background-repeat': 'no-repeat', 'backdrop-filter' : 'blur(0px)' });
-  
+    $('body').css({ 'background-image': "url('img/photo10.png')", 'background-repeat': 'no-repeat' });
+    /*   $('body').css({'background-image' : "url('img/photo1.png')", 'background-position' : 'center', 'background-size' : 'cover', 'position' : 'relative', 'width' : '100%', 'height' : '100%'});*/
+    //////////////// turn this into a function ////////////////////////
     // Define image URL and coords
     var imageUrl = "img/slug10.png";
+    //var imageX = 300;
+    //var imageY = 300;
     // Create image element
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
@@ -191,7 +194,7 @@ function drawSluggy() {
   // Add an event listener for click
   imageEl.on('click', function () {
     //print slug fact
-    $("#location10").append("<p class='fact'>“In 1981, UCSC joined Division III of the NCAA. Since the application required an official team name, UCSC’s then-chancellor polled the student players, and out of this small group emerged a consensus for a new moniker—the sea lions. But the new name did not find favor with the majority of students, who continued to root for the Slugs. After five years of dealing with the two-mascot problem, an overwhelming pro-Slug straw vote by students in 1986 convinced the chancellor to make the lowly but beloved Banana Slug UCSC’s official mascot.”</p>");
+    $("#location10").append("<p class='fact'>“Despite sometimes being a shade of bright yellow, banana slugs blend in with their environment. This is because the leaves and needles on the forest floor in their range tend to be yellow when they reach the ground.”</p>");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location10").append("<p class=fact-title>SLIMY SLUG STATS</p>");
@@ -259,12 +262,7 @@ function drawSluggy() {
     timerNew10.pause();
     timeParagraph10.html("FINAL TIME: " + timerNew10.getTimeValues().toString());
     // maybe have a button to move to the next location 
-    $("#location10").append("<button class=tab data-tab=tab13 id=buttons>You're done! (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
-    $("#location10").on("click", "#buttons", function () {
-      // Trigger click event on tab13
-      $('.tab[data-tab="tab13"]').trigger('click');
-    });
   });
 }
 
