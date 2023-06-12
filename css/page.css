@@ -5,7 +5,7 @@ body {
   background-size: cover;
   width: 1920px;
   height: 1080px;
-  background-size: 1920px 1080px; 
+  /*background-size: 1920px 1080px; */
   backdrop-filter:  blur(5px);
   /*
   min-width: 276px;*/
@@ -153,15 +153,33 @@ ul {
 
 /*Slugs*/
 #slug1 {
-  width: 70px;
+  width: 200px;
 }
 #slug2 {
-  width: 70px;
+  width: 200px;
 }
 #slug3 {
   width: 200px;
 }
 #slug4 {
+  width: 200px;
+}
+#slug5 {
+  width: 200px;
+}
+#slug6 {
+  width: 200px;
+}
+#slug7 {
+  width: 200px;
+}
+#slug8 {
+  width: 200px;
+}
+#slug9 {
+  width: 200px;
+}
+#slug10 {
   width: 200px;
 }
 
