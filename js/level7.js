@@ -20,9 +20,6 @@ var slugHeight = 56;
 var numberOfAreas = 5;
 var xOffset = 0;
 var yOffset = 0;
-//initialize timer
-var timerNew7 = new easytimer.Timer();
-var timeParagraph7 = $("#location7 #time-p");
 
 var ajaxGetSlugFacts;
 
@@ -121,11 +118,6 @@ $('.tab').click(function () {
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug7");
-    timerNew7.start();
-    timerNew7.addEventListener('secondsUpdated', function (e) {
-      timeParagraph7.html("TIME: " + timerNew7.getTimeValues().toString());
-    })
-
     drawSluggy();
     //drawBoxes();
     //after 120 seconds, highlight the quadrant the slug is in
@@ -250,9 +242,6 @@ function drawSluggy() {
     imageEl.hide();
     //hide the hint
     $("#hint-p").hide();
-    //pause the timer
-    timerNew7.pause();
-    timeParagraph7.html("FINAL TIME: " + timerNew7.getTimeValues().toString());
     // maybe have a button to move to the next location 
     $("#location7").append("<button class=tab data-tab=tab10 id=buttons>Next Level (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
