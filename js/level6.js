@@ -110,7 +110,7 @@ $('.tab').click(function () {
   $('[data-tab-content="' + tabId + '"]').toggleClass('active');
 
   // specific location tabs
-  if (tabId === 'tab3') {
+  if (tabId === 'tab8') {
     $(".nav-bar").hide();
     $('body').css({ 'background-image': "url('img/photo6.png')", 'background-repeat': 'no-repeat' });
     /*   $('body').css({'background-image' : "url('img/photo1.png')", 'background-position' : 'center', 'background-size' : 'cover', 'position' : 'relative', 'width' : '100%', 'height' : '100%'});*/
