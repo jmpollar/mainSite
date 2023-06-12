@@ -41,9 +41,6 @@ $.ajax({
   success: function (data) {
     // do stuff
     ajaxGetSlugFacts = data;
-    console.log(ajaxGetSlugFacts);
-    console.log(ajaxGetSlugFacts[0].characteristics);
-    console.log(ajaxGetSlugFacts[1].characteristics);
   },
   // What we do if the api call fails
   error: function (jqXHR, textStatus, errorThrown) {
@@ -118,7 +115,11 @@ $('.tab').click(function () {
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug3");
-
+    imageEl.click(function () {
+      //pause the timer
+      timerGlobal.pause();
+      timeParagraph3.html("FINAL TIME: " + timerGlobal.getTimeValues().toString());
+  });
     drawSluggy();
     //drawBoxes();
     //after 120 seconds, highlight the quadrant the slug is in
@@ -163,9 +164,6 @@ function chooseCoordinates() {
 }
 
 function drawSluggy() {
-  console.log(coords); //functional
-  console.log(coords[2] + coords[3]);
-
   // Set position using CSS
   imageEl.css({
     'position': 'absolute',
@@ -247,6 +245,7 @@ function drawSluggy() {
     $("#location3").append("<button class=tab data-tab=tab6 id=buttons>Next Level (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
     $("#location3").on("click", "#buttons", function() {
+      timerGlobal.start();
       loadLevel4();
     });
   });

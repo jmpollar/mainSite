@@ -118,6 +118,12 @@ $('.tab').click(function () {
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug5");
+    imageEl.click(function () {
+      //pause the timer
+      timerGlobal.pause();
+      timeParagraph5.html("FINAL TIME: " + timerGlobal.getTimeValues().toString());
+  });
+  
     drawSluggy();
     //drawBoxes();
     //after 120 seconds, highlight the quadrant the slug is in
@@ -246,6 +252,7 @@ function drawSluggy() {
     $("#location5").append("<button class=tab data-tab=tab8 id=buttons>Next Level (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
     $("#location5").on("click", "#buttons", function() {
+      timerGlobal.start();
       loadLevel6();
     });
   });

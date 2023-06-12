@@ -121,6 +121,13 @@ $('.tab').click(function () {
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug10");
+    //clicking the slug pauses the timer
+    imageEl.click(function () {
+      //pause the timer
+      timerGlobal.pause();
+      timeParagraph10.html("TOTAL TIME: " + timerGlobal.getTimeValues().toString());
+    });
+
     drawSluggy();
     //drawBoxes();
     //after 120 seconds, highlight the quadrant the slug is in
@@ -245,21 +252,21 @@ function drawSluggy() {
     imageEl.hide();
     //hide the hint
     $("#hint-p").hide();
-    
+
     // maybe have a button to move to the next location 
     // (it can be like the start button where that is what makes it go to the next tab)
     $("#location10").append('<button class="tab" data-tab="tab13" id="buttons">All Done!</button>');
-    $("#location10").on("click", "#buttons", function() {
+    $("#location10").on("click", "#buttons", function () {
       loadEnd();
     });
   });
 }
 
-  function loadEnd() {
-    var script = document.createElement("script");
-    script.src = "./js/end.js";
-    document.head.appendChild(script);
-  }
+function loadEnd() {
+  var script = document.createElement("script");
+  script.src = "./js/end.js";
+  document.head.appendChild(script);
+}
 
 //find out what quadrant the slug is in
 //UL
