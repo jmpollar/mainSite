@@ -21,7 +21,7 @@ var xOffset = 0;
 var yOffset = 0;
 //initialize timer
 var timerNew9 = new easytimer.Timer();
-var timeParagraph = $("#time-p");
+var timeParagraph9 = $("#time-p");
 
 var ajaxGetSlugFacts;
 
@@ -125,7 +125,7 @@ $('.tab').click(function () {
     imageEl.attr('id', "slug9");
     timerNew9.start();
     timerNew9.addEventListener('secondsUpdated', function (e) {
-      timeParagraph.html("TIME: " + timerNew9.getTimeValues().toString());
+      timeParagraph9.html("TIME: " + timerNew9.getTimeValues().toString());
     })
 
     ///////////////////////////////////////
@@ -260,10 +260,13 @@ function drawSluggy() {
     $("#hint-p").hide();
     //pause the timer
     timerNew9.pause();
-    timeParagraph.html("FINAL TIME: " + timerNew9.getTimeValues().toString());
+    timeParagraph9.html("FINAL TIME: " + timerNew9.getTimeValues().toString());
     // maybe have a button to move to the next location 
+    $("#location9").append("<button class=tab data-tab=tab12 id=buttons>Next Level (double click me)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
-    loadLevel10();
+    $("#location9").on("click", "#buttons", function() {
+      loadLevel10();
+    });
   });
   function loadLevel10() {
     var script = document.createElement("script");
