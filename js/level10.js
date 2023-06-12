@@ -20,7 +20,7 @@ var numberOfAreas = 5;
 var xOffset = 0;
 var yOffset = 0;
 //initialize timer
-var timerNew = new easytimer.Timer();
+var timerNew10 = new easytimer.Timer();
 var timeParagraph = $("#time-p");
 
 var ajaxGetSlugFacts;
@@ -116,16 +116,16 @@ $('.tab').click(function () {
     /*   $('body').css({'background-image' : "url('img/photo1.png')", 'background-position' : 'center', 'background-size' : 'cover', 'position' : 'relative', 'width' : '100%', 'height' : '100%'});*/
     //////////////// turn this into a function ////////////////////////
     // Define image URL and coords
-    var imageUrl = "img/slug1.png";
+    var imageUrl = "img/slug10.png";
     //var imageX = 300;
     //var imageY = 300;
     // Create image element
     imageEl = $('<img>');
     imageEl.attr('src', imageUrl);
     imageEl.attr('id', "slug10");
-    timerNew.start();
-    timerNew.addEventListener('secondsUpdated', function (e) {
-      timeParagraph.html("TIME: " + timerNew.getTimeValues().toString());
+    timerNew10.start();
+    timerNew10.addEventListener('secondsUpdated', function (e) {
+      timeParagraph.html("TIME: " + timerNew10.getTimeValues().toString());
     })
 
     ///////////////////////////////////////
@@ -259,8 +259,8 @@ function drawSluggy() {
     //hide the hint
     $("#hint-p").hide();
     //pause the timer
-    timerNew.pause();
-    timeParagraph.html("FINAL TIME: " + timerNew.getTimeValues().toString());
+    timerNew10.pause();
+    timeParagraph.html("FINAL TIME: " + timerNew10.getTimeValues().toString());
     // maybe have a button to move to the next location 
     // (it can be like the start button where that is what makes it go to the next tab)
   });
