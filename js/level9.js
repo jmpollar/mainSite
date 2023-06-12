@@ -65,10 +65,10 @@ class AreaLevel9 {
 }
 
 const area1Level9 = new AreaLevel9(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
-const area2area1Level9 = new AreaLevel9(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
-const area3area1Level9 = new AreaLevel9(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
-const area4area1Level9 = new AreaLevel9(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
-const area5area1Level9 = new AreaLevel9(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
+const area2Level9 = new AreaLevel9(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
+const area3Level9 = new AreaLevel9(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
+const area4Level9 = new AreaLevel9(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
+const area5Level9 = new AreaLevel9(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
 
 //declare quadrants
 /*//upper left
@@ -148,22 +148,22 @@ function chooseCoordinates() {
   //assign the area based on that
   switch (randAreaNum) {
     case 1:
-      randArea = area1area1Level9;
+      randArea = area1Level9;
       break;
     case 2:
-      randArea = area2area1Level9;
+      randArea = area2Level9;
       break;
     case 3:
-      randArea = area3area1Level9;
+      randArea = area3Level9;
       break;
     case 4:
-      randArea = area4area1Level9;
+      randArea = area4Level9;
       break;
     case 5:
-      randArea = area5area1Level9;
+      randArea = area5Level9;
       break;
     default:
-      randArea = area1area1Level9;
+      randArea = area1Level9;
       console.log("OOPSIES");
       break;
   }
