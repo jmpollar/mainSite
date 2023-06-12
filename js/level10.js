@@ -134,11 +134,6 @@ $('.tab').click(function () {
     //after 120 seconds, highlight the quadrant the slug is in
     const showQuadTimeout = setTimeout(drawQuadrant, 60000, currentQuadrant);
   }
-  // end page
-  if (tabId === 'tab13') {
-    $(".nav-bar").hide();
-    $('body').css({ 'background-image': "url('img/trees.jpg')", 'background-repeat': 'no-repeat', 'backdrop-filter' : 'blur(5px)' });
-  }
 })
 
 //define function that randomly selects an area and selects coordinates based off that
@@ -264,12 +259,17 @@ function drawSluggy() {
     // maybe have a button to move to the next location 
     // (it can be like the start button where that is what makes it go to the next tab)
     $("#location10").append('<button class="tab" data-tab="tab13" id="buttons">All Done!</button>');
-    $("#location10").on("click", "#buttons", function () {
-      $('.tab[data-tab="tab13"]').trigger('click');
+    $("#location10").on("click", "#buttons", function() {
+      loadEnd();
     });
-    
   });
 }
+
+  function loadEnd() {
+    var script = document.createElement("script");
+    script.src = "./js/end.js";
+    document.head.appendChild(script);
+  }
 
 //find out what quadrant the slug is in
 //UL
