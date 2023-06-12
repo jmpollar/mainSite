@@ -260,11 +260,6 @@ function drawSluggy() {
       loadLevel7();
     });
   });
-  function loadLevel7() {
-    var script = document.createElement("script");
-    script.src = "./js/level7.js";
-    document.head.appendChild(script);
-  }
 }
 
   function loadLevel7() {
