@@ -21,7 +21,7 @@ var xOffset = 0;
 var yOffset = 0;
 //initialize timer
 var timerNew10 = new easytimer.Timer();
-var timeParagraph10 = $("#time-p");
+var timeParagraph10 = $("#location10 #time-p");
 
 var ajaxGetSlugFacts;
 
