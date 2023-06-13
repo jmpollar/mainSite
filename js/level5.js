@@ -62,11 +62,11 @@ class AreaLevel5 {
   }
 }
 
-const area1Level5 = new AreaLevel5(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
-const area2Level5 = new AreaLevel5(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
-const area3Level5 = new AreaLevel5(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
-const area4Level5 = new AreaLevel5(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
-const area5Level5 = new AreaLevel5(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
+const area1Level5 = new AreaLevel5(1000 + xOffset, 120 + yOffset, 1445 + xOffset, 240 + yOffset);
+const area2Level5 = new AreaLevel5(705 + xOffset, 300 + yOffset, 1035 + xOffset, 390 + yOffset);
+const area3Level5 = new AreaLevel5(1015 + xOffset, 540 + yOffset, 670 + xOffset, 900 + yOffset);
+const area4Level5 = new AreaLevel5(815 + xOffset, 710 + yOffset, 1145 + xOffset, 805 + yOffset);
+const area5Level5 = new AreaLevel5(970 + xOffset, 845 + yOffset, 1445 + xOffset, 950 + yOffset);
 
 //declare quadrants
 /*//upper left
