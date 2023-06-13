@@ -17,7 +17,7 @@ var gameOver = false;
 var timeElapsed = 0.0;
 var slugWidth = 200;
 var slugHeight = 200;
-var numberOfAreas = 5;
+var numberOfAreas = 4;
 var xOffset = 0;
 var yOffset = 0;
 
@@ -62,11 +62,10 @@ class AreaLevel6 {
   }
 }
 
-const area1Level6 = new AreaLevel6(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
-const area2Level6 = new AreaLevel6(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
-const area3Level6 = new AreaLevel6(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
-const area4Level6 = new AreaLevel6(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
-const area5Level6 = new AreaLevel6(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
+const area1Level6 = new AreaLevel6(70 + xOffset, 220 + yOffset, 325 + xOffset, 325 + yOffset);
+const area2Level6 = new AreaLevel6(25 + xOffset, 785 + yOffset, 295 + xOffset, 900 + yOffset);
+const area3Level6 = new AreaLevel6(1255 + xOffset, 230 + yOffset, 1445 + xOffset, 330 + yOffset);
+const area4Level6 = new AreaLevel6(1165 + xOffset, 850 + yOffset, 1445 + xOffset, 970 + yOffset);
 
 //declare quadrants
 /*//upper left
@@ -150,9 +149,6 @@ function chooseCoordinates() {
       break;
     case 4:
       randArea = area4Level6;
-      break;
-    case 5:
-      randArea = area5Level6;
       break;
     default:
       randArea = area1Level6;
