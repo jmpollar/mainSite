@@ -242,7 +242,7 @@ function drawSluggy() {
     //hide the hint
     $("#hint-p").hide();
     // maybe have a button to move to the next location 
-    $("#location3").append("<button class=tab data-tab=tab6 id=buttons>Next Level</button>");
+    $("#location3").append("<button class=tab data-tab=tab6 id=buttons><b>Next Level</b> (Double Click)</button>");
     // (it can be like the start button where that is what makes it go to the next tab)
     $("#location3").on("click", "#buttons", function() {
       timerGlobal.start();
