@@ -121,7 +121,9 @@ $('.tab').click(function () {
       timerGlobal.pause();
       timeParagraph2.html("FINAL TIME: " + timerGlobal.getTimeValues().toString());
   });
+  setTimeout(function () {
     drawSluggy();
+  }, 500);
     //drawBoxes();
     //after 120 seconds, highlight the quadrant the slug is in
     const showQuadTimeout = setTimeout(drawQuadrant, 60000, currentQuadrant);
