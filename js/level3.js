@@ -15,9 +15,9 @@ var photo3Width = 1920;
 var photo3Height = 1080;
 var gameOver = false;
 var timeElapsed = 0.0;
-var slugWidth = 50;
-var slugHeight = 56;
-var numberOfAreas = 5;
+var slugWidth = 200;
+var slugHeight = 200;
+var numberOfAreas = 4;
 var xOffset = 0;
 var yOffset = 0;
 
@@ -59,11 +59,10 @@ class AreaLevel3 {
   }
 }
 
-const area1Level3 = new AreaLevel3(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
-const area2Level3 = new AreaLevel3(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
-const area3Level3 = new AreaLevel3(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
-const area4Level3 = new AreaLevel3(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
-const area5Level3 = new AreaLevel3(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
+const area1Level3 = new AreaLevel3(73 + xOffset, 180 + yOffset, 585 + xOffset, 285+ yOffset);
+const area2Level3 = new AreaLevel3(33 + xOffset, 416 + yOffset, 543 + xOffset, 582 + yOffset);
+const area3Level3 = new AreaLevel3(31 + xOffset, 738 + yOffset, 545 + xOffset, 912 + yOffset);
+const area4Level3 = new AreaLevel3(959 + xOffset, 778 + yOffset, 1450 + xOffset, 945 + yOffset);
 
 //declare quadrants
 /*//upper left
@@ -147,9 +146,6 @@ function chooseCoordinates() {
       break;
     case 4:
       randArea = area4Level3;
-      break;
-    case 5:
-      randArea = area5Level3;
       break;
     default:
       randArea = area1Level3;
