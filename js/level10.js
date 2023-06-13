@@ -188,7 +188,7 @@ function drawSluggy() {
   // Add an event listener for click
   imageEl.on('click', function () {
     //print slug fact
-    $("#location10").append("<p class='fact'>“Despite sometimes being a shade of bright yellow, banana slugs blend in with their environment. This is because the leaves and needles on the forest floor in their range tend to be yellow when they reach the ground.”</p>");
+    $("#location10").append("<p class='fact'>“A slug’s slime contains fibers which prevents it from sliding down vertical surfaces. It also enables it to glide without difficulty over glass shards, or even the edge of a razor blade!”</p>");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location10").append("<p class=fact-title>SLIMY SLUG STATS</p>");

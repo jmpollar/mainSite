@@ -184,7 +184,7 @@ function drawSluggy() {
   // Add an event listener for click
   imageEl.on('click', function () {
     //print slug fact
-    $("#location9").append("<p class='fact'>“In 1981, UCSC joined Division III of the NCAA. Since the application required an official team name, UCSC’s then-chancellor polled the student players, and out of this small group emerged a consensus for a new moniker—the sea lions. But the new name did not find favor with the majority of students, who continued to root for the Slugs. After five years of dealing with the two-mascot problem, an overwhelming pro-Slug straw vote by students in 1986 convinced the chancellor to make the lowly but beloved Banana Slug UCSC’s official mascot.”</p>");
+    $("#location9").append("<p class='fact'>“Remember that a slug’s body is around 80 to 90% water? Because of this, salt kills a slug by drawing water out of their skin through osmosis, consequently dehydrating its slimy exterior.”</p>");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location9").append("<p class=fact-title>SLIMY SLUG STATS</p>");

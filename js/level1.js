@@ -183,7 +183,7 @@ function drawSluggy() {
   // Add an event listener for click
   imageEl.on('click', function () {
     //print slug fact
-    $("#location1").append("<p class='fact'>“In 1981, UCSC joined Division III of the NCAA. Since the application required an official team name, UCSC’s then-chancellor polled the student players, and out of this small group emerged a consensus for a new moniker—the sea lions. But the new name did not find favor with the majority of students, who continued to root for the Slugs. After five years of dealing with the two-mascot problem, an overwhelming pro-Slug straw vote by students in 1986 convinced the chancellor to make the lowly but beloved Banana Slug UCSC’s official mascot.”</p>");
+    $("#location1").append("<p class='fact'>“In 1981, when some campus teams wanted more organized participation in extramural competition, UCSC joined Division III of the NCAA. Since the application required an official team name, UCSC’s then-chancellor polled the student players, and out of this small group emerged a consensus for a new moniker—the sea lions. It was a choice that the chancellor considered more dignified and suitable to serious play than the Banana Slugs. But the new name did not find favor with the majority of students, who continued to root for the Slugs even after a sea lion was painted in the middle of the basketball floor. After five years of dealing with the two-mascot problem, an overwhelming pro-Slug straw vote by students in 1986 convinced the chancellor to make the lowly but beloved Banana Slug UCSC’s official mascot.”</p>");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location1").append("<p class=fact-title>SLIMY SLUG STATS</p>");
