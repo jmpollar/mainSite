@@ -183,6 +183,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location4").append("<p class='fact'>“The slime coating on slugs is neither a liquid nor a solid, but rather a liquid crystal that is currently being studied by material scientists and has already been synthesized to aid in surgeries as an advanced, biodegradable glue used for suturing!”</p>");
+    //print big slug image
+    $("#location4").append("<img class='slugbig' src='img/slug4.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location4").append("<p class=fact-title>SLIMY SLUG STATS</p>");

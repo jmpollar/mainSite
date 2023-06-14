@@ -17,7 +17,7 @@ var gameOver = false;
 var timeElapsed = 0.0;
 var slugWidth = 150;
 var slugHeight = 150;
-var numberOfAreas = 5;
+var numberOfAreas = 4;
 var xOffset = 0;
 var yOffset = 0;
 
@@ -62,11 +62,11 @@ class AreaLevel8 {
   }
 }
 
-const area1Level8 = new AreaLevel8(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
-const area2Level8 = new AreaLevel8(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
-const area3Level8 = new AreaLevel8(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
-const area4Level8 = new AreaLevel8(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
-const area5Level8 = new AreaLevel8(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
+const area1Level8 = new AreaLevel8(780 + xOffset, 25 + yOffset, 1300 + xOffset, 52 + yOffset);
+const area2Level8 = new AreaLevel8(45 + xOffset, 585 + yOffset, 375 + xOffset, 700 + yOffset);
+const area3Level8 = new AreaLevel8(1145 + xOffset, 430 + yOffset, 1440 + xOffset, 510 + yOffset);
+const area4Level8 = new AreaLevel8(1350 + xOffset, 650 + yOffset, 1460 + xOffset, 790 + yOffset);
+ ;
 
 //declare quadrants
 /*//upper left
@@ -151,9 +151,7 @@ function chooseCoordinates() {
     case 4:
       randArea = area4Level8;
       break;
-    case 5:
-      randArea = area5Level8;
-      break;
+    
     default:
       randArea = area1Level8;
       console.log("OOPSIES");
@@ -187,6 +185,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location8").append("<p class='fact'>“The banana slug diet of leaves, fecal matter, fungi, and other dead matter converts it into rich soil. They also consume berries, excreting the seeds in the fertile humus environment of their waste.11﻿ This, in turn, supports the plant's germination, particularly since the taste of the slug's excreted seeds is unpalatable to rodents.”</p>");
+    //print big slug image
+    $("#location8").append("<img class='slugbig' src='img/slug8.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location8").append("<p class=fact-title>SLIMY SLUG STATS</p>");

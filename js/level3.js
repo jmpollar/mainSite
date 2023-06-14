@@ -177,6 +177,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location3").append("<p class='fact'>“Despite sometimes being a shade of bright yellow, banana slugs blend in with their environment. This is because the leaves and needles on the forest floor in their range tend to be yellow when they reach the ground.”</p>");
+    //print big slug image
+    $("#location3").append("<img class='slugbig' src='img/slug3.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location3").append("<p class=fact-title>SLIMY SLUG STATS</p>");

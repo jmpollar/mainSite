@@ -91,6 +91,7 @@ ul {
 }
 
 .nav-bar {
+  display: block;
   background-color: #f0f0b6ef;
   border: solid 1px #888;
   margin-inline: 50px;
@@ -173,8 +174,8 @@ ul {
   height: 100px;
 }
 #slug6 {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 #slug7 {
   width: 200px;
@@ -271,4 +272,9 @@ canvas {
 .fact-title {
   font-size: 24px;
   font-weight: bold;
+}
+
+.slugbig {
+  max-width: 500px;
+  max-height: 500px;
 }

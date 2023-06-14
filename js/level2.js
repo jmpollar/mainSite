@@ -175,6 +175,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location2").append("<p class='fact'>“The 100-acre UC Santa Cruz Coastal Science Campus (CSC) is located on the edge of the Monterey Bay National Marine Sanctuary, encompassing federal, state, and university research and educational facilities that support coastal conservation, marine biology, ecology, habitat restoration, and environmental policy. The coastal campus strengthens research collaborations and student opportunities with government agencies and conservation organizations.”</p>");
+    //print big slug image
+    $("#location2").append("<img class='slugbig' src='img/slug2.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location2").append("<p class=fact-title>SLIMY SLUG STATS</p>");

@@ -17,7 +17,7 @@ var gameOver = false;
 var timeElapsed = 0.0;
 var slugWidth = 200;
 var slugHeight = 200;
-var numberOfAreas = 5;
+var numberOfAreas = 4;
 var xOffset = 0;
 var yOffset = 0;
 
@@ -62,11 +62,10 @@ class AreaLevel7 {
   }
 }
 
-const area1Level7 = new AreaLevel7(70 + xOffset, 265 + yOffset, 415 + xOffset, 450 + yOffset);
-const area2Level7 = new AreaLevel7(40 + xOffset, 770 + yOffset, 390 + xOffset, 940 + yOffset);
-const area3Level7 = new AreaLevel7(550 + xOffset, 690 + yOffset, 670 + xOffset, 900 + yOffset);
-const area4Level7 = new AreaLevel7(1280 + xOffset, 340 + yOffset, 1465 + xOffset, 630 + yOffset);
-const area5Level7 = new AreaLevel7(1125 + xOffset, 750 + yOffset, 1480 + xOffset, 930 + yOffset);
+const area1Level7 = new AreaLevel7(12 + xOffset, 17 + yOffset, 130 + xOffset, 70 + yOffset);
+const area2Level7 = new AreaLevel7(73 + xOffset, 870 + yOffset, 411 + xOffset, 965 + yOffset);
+const area3Level7 = new AreaLevel7(871 + xOffset, 570 + yOffset, 1040 + xOffset, 942 + yOffset);
+const area4Level7 = new AreaLevel7(1150 + xOffset, 845 + yOffset, 1450 + xOffset, 950 + yOffset);
 
 //declare quadrants
 /*//upper left
@@ -153,9 +152,6 @@ function chooseCoordinates() {
     case 4:
       randArea = area4Level7;
       break;
-    case 5:
-      randArea = area5Level7;
-      break;
     default:
       randArea = area1Level7;
       console.log("OOPSIES");
@@ -189,6 +185,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location7").append("<p class='fact'>“A slug’s body is around 80 to 90% water. As a result, it is susceptible to desiccation (extreme dryness), which is worsened by the fact that slugs have little or no shell. They keep themselves alive by generating layers of protective mucus.”</p>");
+    //print big slug image
+    $("#location7").append("<img class='slugbig' src='img/slug7.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location7").append("<p class=fact-title>SLIMY SLUG STATS</p>");
