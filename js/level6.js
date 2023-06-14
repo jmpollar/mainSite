@@ -183,6 +183,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location6").append("<p class='fact'>“The slime covering banana slugs helps deter would-be predators, and not just because of the stickiness. Along with increasing the slime production to create a sticky mouthful, the slime also contains chemicals that act as an anesthetic, numbing the tongue and throat of an animal that tries to eat it. It only takes one attempt to figure out that banana slugs aren't worth the trouble as a snack.”</p>");
+    //print big slug image
+    $("#location6").append("<img class='slugbig' src='img/slug6.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location6").append("<p class=fact-title>SLIMY SLUG STATS</p>");

@@ -185,6 +185,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location7").append("<p class='fact'>“A slug’s body is around 80 to 90% water. As a result, it is susceptible to desiccation (extreme dryness), which is worsened by the fact that slugs have little or no shell. They keep themselves alive by generating layers of protective mucus.”</p>");
+    //print big slug image
+    $("#location7").append("<img class='slugbig' src='img/slug7.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location7").append("<p class=fact-title>SLIMY SLUG STATS</p>");

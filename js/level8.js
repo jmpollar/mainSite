@@ -185,6 +185,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location8").append("<p class='fact'>“The banana slug diet of leaves, fecal matter, fungi, and other dead matter converts it into rich soil. They also consume berries, excreting the seeds in the fertile humus environment of their waste.11﻿ This, in turn, supports the plant's germination, particularly since the taste of the slug's excreted seeds is unpalatable to rodents.”</p>");
+    //print big slug image
+    $("#location8").append("<img class='slugbig' src='img/slug8.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location8").append("<p class=fact-title>SLIMY SLUG STATS</p>");

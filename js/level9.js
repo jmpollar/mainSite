@@ -187,6 +187,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location9").append("<p class='fact'>“Remember that a slug’s body is around 80 to 90% water? Because of this, salt kills a slug by drawing water out of their skin through osmosis, consequently dehydrating its slimy exterior.”</p>");
+    //print big slug image
+    $("#location9").append("<img class='slugbig' src='img/slug9.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location9").append("<p class=fact-title>SLIMY SLUG STATS</p>");

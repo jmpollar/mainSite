@@ -187,6 +187,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location5").append("<p class='fact'>“A slug’s slime absorbs water, which is why it’s nearly impossible to wash it off your hands.”</p>");
+    //print big slug image
+    $("#location5").append("<img class='slugbig' src='img/slug5.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location5").append("<p class=fact-title>SLIMY SLUG STATS</p>");

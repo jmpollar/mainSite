@@ -91,6 +91,7 @@ ul {
 }
 
 .nav-bar {
+  display: block;
   background-color: #f0f0b6ef;
   border: solid 1px #888;
   margin-inline: 50px;
@@ -271,4 +272,9 @@ canvas {
 .fact-title {
   font-size: 24px;
   font-weight: bold;
+}
+
+.slugbig {
+  max-width: 500px;
+  max-height: 500px;
 }

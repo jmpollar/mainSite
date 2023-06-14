@@ -191,6 +191,8 @@ function drawSluggy() {
   imageEl.on('click', function () {
     //print slug fact
     $("#location10").append("<p class='fact'>“A slug’s slime contains fibers which prevents it from sliding down vertical surfaces. It also enables it to glide without difficulty over glass shards, or even the edge of a razor blade!”</p>");
+    //print big slug image
+    $("#location10").append("<img class='slugbig' src='img/slug10.png' />");
     //print random slug stat (for this level: land slug characteristics)
     var randFactInt = getRandomInteger(0, 15);
     $("#location10").append("<p class=fact-title>SLIMY SLUG STATS</p>");
