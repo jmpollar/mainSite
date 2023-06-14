@@ -24,6 +24,7 @@ $("#hideSimpleBtn").click(function () {
     if (tabId === 'tab13') {
       //$(".nav-bar").hide();
       $('body').css({ 'background-image': "url('img/trees.jpg')", 'background-repeat': 'no-repeat', 'backdrop-filter' : 'blur(5px)' });
+      timeParagraph10.html("TOTAL TIME: " + timerGlobal.getTimeValues().toString());
     }
   })
   
